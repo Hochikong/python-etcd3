@@ -1,7 +1,7 @@
 ============
 python-etcd3
 ============
-
+Please read the README.md
 
 .. image:: https://img.shields.io/pypi/v/etcd3.svg
         :target: https://pypi.python.org/pypi/etcd3
