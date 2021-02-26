@@ -24,26 +24,26 @@ requirements = load_reqs('requirements/base.txt')
 test_requirements = load_reqs('requirements/test.txt')
 
 setup(
-    name='etcd3',
-    version='0.12.0',
-    description="Python client for the etcd3 API",
+    name='etcd3ref',
+    version='0.1.0',
+    description="Python client for the etcd v3 API",
     long_description=readme + '\n\n' + history,
     author="Louis Taylor",
     author_email='louis@kragniz.eu',
-    url='https://github.com/kragniz/python-etcd3',
+    url='https://github.com/Hochikong/python-etcd3',
     packages=[
-        'etcd3',
-        'etcd3.etcdrpc',
+        'etcd3ref',
+        'etcd3ref.etcdrpc',
     ],
     package_dir={
-        'etcd3': 'etcd3',
-        'etcd3.etcdrpc': 'etcd3/etcdrpc',
+        'etcd3ref': 'etcd3ref',
+        'etcd3ref.etcdrpc': 'etcd3ref/etcdrpc',
     },
     include_package_data=True,
     install_requires=requirements,
     license="Apache Software License 2.0",
     zip_safe=False,
-    keywords='etcd3',
+    keywords='etcd3ref',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',

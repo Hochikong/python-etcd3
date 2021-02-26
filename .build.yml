@@ -3,7 +3,7 @@ packages:
   - python
   - python-pip
 sources:
-  - https://github.com/kragniz/python-etcd3
+  - https://github.com/kragniz/python-etcd3ref
 environment:
   TEST_ETCD_VERSION: v3.3.10
 tasks:

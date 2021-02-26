@@ -1,0 +1,311 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width,initial-scale=1" name="viewport"/>
+    <link href="../genindex.html" rel="index" title="索引"/>
+    <link href="../search.html" rel="search" title="搜索"/>
+    <link href="etcd3ref.html" rel="next" title="etcd3ref package"/>
+    <link href="../index.html" rel="prev" title="Welcome to Python-Etcd3 ref’s documentation!"/>
+
+    <meta content="sphinx-3.4.3, furo 2020.12.30.beta24" name="generator"/>
+    <title>etcd3ref - Python-Etcd3 Refactor 0.1.0 文档</title>
+    <link href="../_static/styles/furo.css?digest=33d2fc4f3f180ec1ffc6524e273e21d7d58cbe49" rel="stylesheet">
+    <link href="../_static/pygments.css" rel="stylesheet">
+    <link href="../_static/pygments_dark.css" media="(prefers-color-scheme: dark)" rel="stylesheet">
+
+
+    <style>
+        :root {
+            --color-code-background: #f8f8f8;
+            --color-code-foreground: black;
+
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-code-background: #202020;
+                --color-code-foreground: #d0d0d0;
+
+            }
+        }
+
+        /* For allowing end-user-specific overrides */
+        .override-light {
+            --color-code-background: #f8f8f8;
+            --color-code-foreground: black;
+
+        }
+
+        .override-dark {
+            --color-code-background: #202020;
+            --color-code-foreground: #d0d0d0;
+
+        }
+    </style>
+    <link href="../_static/styles/furo-extensions.css?digest=26485485040e7aaf717c13fd0188a5ad2c2deb60" rel="stylesheet">
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script defer="defer" src="../_static/jquery.js"></script>
+    <script defer="defer" src="../_static/underscore.js"></script>
+    <script defer="defer" src="../_static/doctools.js"></script>
+    <script defer="defer" src="../_static/translations.js"></script>
+    <script defer src="../_static/scripts/main.js?digest=e931d09b2a40c1bb82b542effe772014573baf67"></script>
+</head>
+<body dir="">
+
+<svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="svg-toc" viewBox="0 0 24 24">
+        <title>Contents</title>
+        <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+             stroke-width="1.5" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0h24v24H0z" stroke="none"/>
+            <line x1="4" x2="20" y1="6" y2="6"/>
+            <line x1="10" x2="20" y1="12" y2="12"/>
+            <line x1="6" x2="20" y1="18" y2="18"/>
+        </svg>
+    </symbol>
+    <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg class="feather feather-menu" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+             stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+             xmlns="http://www.w3.org/2000/svg">
+            <line x1="3" x2="21" y1="12" y2="12"></line>
+            <line x1="3" x2="21" y1="6" y2="6"></line>
+            <line x1="3" x2="21" y1="18" y2="18"></line>
+        </svg>
+    </symbol>
+    <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg class="feather feather-chevron-right" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+             stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+             xmlns="http://www.w3.org/2000/svg">
+            <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+    </symbol>
+</svg>
+
+<input class="sidebar-toggle" id="__navigation" name="__navigation" type="checkbox">
+<input class="sidebar-toggle" id="__toc" name="__toc" type="checkbox">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+
+<div class="page">
+    <header class="mobile-header">
+        <div class="header-left">
+            <label class="nav-overlay-icon" for="__navigation">
+                <i class="icon">
+                    <svg>
+                        <use href="#svg-menu"></use>
+                    </svg>
+                </i>
+            </label>
+        </div>
+        <div class="header-center">
+            <a href="../index.html">
+                <div class="brand">Python-Etcd3 Refactor 0.1.0 文档</div>
+            </a>
+        </div>
+        <div class="header-right">
+            <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+                <i class="icon">
+                    <svg>
+                        <use href="#svg-toc"></use>
+                    </svg>
+                </i>
+            </label>
+        </div>
+    </header>
+    <aside class="sidebar-drawer">
+        <div class="sidebar-container">
+
+            <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+
+
+                <span class="sidebar-brand-text">Python-Etcd3 Refactor 0.1.0 文档</span>
+
+            </a>
+                <form action="../search.html" class="sidebar-search-container" method="get">
+                    <input class="sidebar-search" name="q" placeholder=搜索>
+                    <input name="check_keywords" type="hidden" value="yes">
+                    <input name="area" type="hidden" value="default">
+                </form>
+                <div class="sidebar-scroll">
+                    <div class="sidebar-tree">
+                        <p class="caption"><span class="caption-text">Contents:</span></p>
+                        <ul class="current">
+                            <li class="toctree-l1 current has-children current-page"><a
+                                    class="current reference internal" href="#">etcd3ref</a><input checked=""
+                                                                                                   class="toctree-checkbox"
+                                                                                                   id="toctree-checkbox-1"
+                                                                                                   name="toctree-checkbox-1"
+                                                                                                   type="checkbox"/><label
+                                    for="toctree-checkbox-1"><i class="icon">
+                                <svg>
+                                    <use href="#svg-arrow-right"></use>
+                                </svg>
+                            </i></label>
+                                <ul>
+                                    <li class="toctree-l2 has-children"><a class="reference internal"
+                                                                           href="etcd3ref.html">etcd3ref
+                                        package</a><input class="toctree-checkbox" id="toctree-checkbox-2"
+                                                          name="toctree-checkbox-2" type="checkbox"/><label
+                                            for="toctree-checkbox-2"><i class="icon">
+                                        <svg>
+                                            <use href="#svg-arrow-right"></use>
+                                        </svg>
+                                    </i></label>
+                                        <ul>
+                                            <li class="toctree-l3"><a class="reference internal"
+                                                                      href="etcd3ref.etcdrpc.html">etcd3ref.etcdrpc
+                                                package</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </aside>
+    <main class="main">
+        <div class="content">
+            <article role="main">
+                <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+                    <i class="icon">
+                        <svg>
+                            <use href="#svg-toc"></use>
+                        </svg>
+                    </i>
+                </label>
+                <div class="section" id="etcd3ref">
+                    <h1>etcd3ref<a class="headerlink" href="#etcd3ref" title="永久链接至标题">¶</a></h1>
+                    <div class="toctree-wrapper compound">
+                        <ul>
+                            <li class="toctree-l1"><a class="reference internal" href="etcd3ref.html">etcd3ref
+                                package</a>
+                                <ul>
+                                    <li class="toctree-l2"><a class="reference internal"
+                                                              href="etcd3ref.html#subpackages">Subpackages</a>
+                                        <ul>
+                                            <li class="toctree-l3"><a class="reference internal"
+                                                                      href="etcd3ref.etcdrpc.html">etcd3ref.etcdrpc
+                                                package</a>
+                                                <ul>
+                                                    <li class="toctree-l4"><a class="reference internal"
+                                                                              href="etcd3ref.etcdrpc.html#submodules">Submodules</a>
+                                                    </li>
+                                                    <li class="toctree-l4"><a class="reference internal"
+                                                                              href="etcd3ref.etcdrpc.html#module-etcd3ref.etcdrpc.auth_pb2">etcd3ref.etcdrpc.auth_pb2
+                                                        module</a></li>
+                                                    <li class="toctree-l4"><a class="reference internal"
+                                                                              href="etcd3ref.etcdrpc.html#module-etcd3ref.etcdrpc.kv_pb2">etcd3ref.etcdrpc.kv_pb2
+                                                        module</a></li>
+                                                    <li class="toctree-l4"><a class="reference internal"
+                                                                              href="etcd3ref.etcdrpc.html#module-etcd3ref.etcdrpc.rpc_pb2">etcd3ref.etcdrpc.rpc_pb2
+                                                        module</a></li>
+                                                    <li class="toctree-l4"><a class="reference internal"
+                                                                              href="etcd3ref.etcdrpc.html#module-etcd3ref.etcdrpc.rpc_pb2_grpc">etcd3ref.etcdrpc.rpc_pb2_grpc
+                                                        module</a></li>
+                                                    <li class="toctree-l4"><a class="reference internal"
+                                                                              href="etcd3ref.etcdrpc.html#module-etcd3ref.etcdrpc">Module
+                                                        contents</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="toctree-l2"><a class="reference internal"
+                                                              href="etcd3ref.html#submodules">Submodules</a></li>
+                                    <li class="toctree-l2"><a class="reference internal"
+                                                              href="etcd3ref.html#module-etcd3ref.client">etcd3ref.client
+                                        module</a></li>
+                                    <li class="toctree-l2"><a class="reference internal"
+                                                              href="etcd3ref.html#module-etcd3ref.events">etcd3ref.events
+                                        module</a></li>
+                                    <li class="toctree-l2"><a class="reference internal"
+                                                              href="etcd3ref.html#module-etcd3ref.exceptions">etcd3ref.exceptions
+                                        module</a></li>
+                                    <li class="toctree-l2"><a class="reference internal"
+                                                              href="etcd3ref.html#module-etcd3ref.leases">etcd3ref.leases
+                                        module</a></li>
+                                    <li class="toctree-l2"><a class="reference internal"
+                                                              href="etcd3ref.html#module-etcd3ref.locks">etcd3ref.locks
+                                        module</a></li>
+                                    <li class="toctree-l2"><a class="reference internal"
+                                                              href="etcd3ref.html#module-etcd3ref.members">etcd3ref.members
+                                        module</a></li>
+                                    <li class="toctree-l2"><a class="reference internal"
+                                                              href="etcd3ref.html#module-etcd3ref.transactions">etcd3ref.transactions
+                                        module</a></li>
+                                    <li class="toctree-l2"><a class="reference internal"
+                                                              href="etcd3ref.html#module-etcd3ref.utils">etcd3ref.utils
+                                        module</a></li>
+                                    <li class="toctree-l2"><a class="reference internal"
+                                                              href="etcd3ref.html#module-etcd3ref.watch">etcd3ref.watch
+                                        module</a></li>
+                                    <li class="toctree-l2"><a class="reference internal"
+                                                              href="etcd3ref.html#module-etcd3ref">Module contents</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </article>
+            <footer>
+
+                <div class="related-pages">
+                    <a class="next-page" href="etcd3ref.html">
+                        <div class="page-info">
+                            <div class="context">
+                                <span>Next</span>
+                            </div>
+                            <div class="title">etcd3ref package</div>
+                        </div>
+                        <svg>
+                            <use href="#svg-arrow-right"></use>
+                        </svg>
+                    </a>
+                    <a class="prev-page" href="../index.html">
+                        <svg>
+                            <use href="#svg-arrow-right"></use>
+                        </svg>
+                        <div class="page-info">
+                            <div class="context">
+                                <span>Previous</span>
+                            </div>
+
+                            <div class="title">Home</div>
+
+                        </div>
+                    </a>
+                </div>
+
+                <div class="related-information">
+                    Copyright &#169; 2021, Hochikong
+                    |
+                    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+                    and
+                    <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+                    <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+                    |
+                    <a class="muted-link" href="../_sources/api/modules.rst.txt"
+                       rel="nofollow">
+                        显示源代码
+                    </a>
+                </div>
+
+            </footer>
+        </div>
+        <aside class="toc-drawer no-toc">
+
+
+        </aside>
+    </main>
+</div>
+</body>
+</html>

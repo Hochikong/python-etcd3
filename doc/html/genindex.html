@@ -1,0 +1,1208 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width,initial-scale=1" name="viewport"/>
+    <link href="#" rel="index" title="索引"/>
+    <link href="search.html" rel="search" title="搜索"/>
+
+    <meta content="sphinx-3.4.3, furo 2020.12.30.beta24" name="generator"/>
+    <title>索引 - Python-Etcd3 Refactor 0.1.0 文档</title>
+    <link href="_static/styles/furo.css?digest=33d2fc4f3f180ec1ffc6524e273e21d7d58cbe49" rel="stylesheet">
+    <link href="_static/pygments.css" rel="stylesheet">
+    <link href="_static/pygments_dark.css" media="(prefers-color-scheme: dark)" rel="stylesheet">
+
+
+    <style>
+        :root {
+            --color-code-background: #f8f8f8;
+            --color-code-foreground: black;
+
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-code-background: #202020;
+                --color-code-foreground: #d0d0d0;
+
+            }
+        }
+
+        /* For allowing end-user-specific overrides */
+        .override-light {
+            --color-code-background: #f8f8f8;
+            --color-code-foreground: black;
+
+        }
+
+        .override-dark {
+            --color-code-background: #202020;
+            --color-code-foreground: #d0d0d0;
+
+        }
+    </style>
+    <link href="_static/styles/furo-extensions.css?digest=26485485040e7aaf717c13fd0188a5ad2c2deb60" rel="stylesheet">
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script defer="defer" src="_static/jquery.js"></script>
+    <script defer="defer" src="_static/underscore.js"></script>
+    <script defer="defer" src="_static/doctools.js"></script>
+    <script defer="defer" src="_static/translations.js"></script>
+    <script defer src="_static/scripts/main.js?digest=e931d09b2a40c1bb82b542effe772014573baf67"></script>
+</head>
+<body dir="">
+
+<svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="svg-toc" viewBox="0 0 24 24">
+        <title>Contents</title>
+        <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+             stroke-width="1.5" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0h24v24H0z" stroke="none"/>
+            <line x1="4" x2="20" y1="6" y2="6"/>
+            <line x1="10" x2="20" y1="12" y2="12"/>
+            <line x1="6" x2="20" y1="18" y2="18"/>
+        </svg>
+    </symbol>
+    <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg class="feather feather-menu" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+             stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+             xmlns="http://www.w3.org/2000/svg">
+            <line x1="3" x2="21" y1="12" y2="12"></line>
+            <line x1="3" x2="21" y1="6" y2="6"></line>
+            <line x1="3" x2="21" y1="18" y2="18"></line>
+        </svg>
+    </symbol>
+    <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg class="feather feather-chevron-right" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+             stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+             xmlns="http://www.w3.org/2000/svg">
+            <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+    </symbol>
+</svg>
+
+<input class="sidebar-toggle" id="__navigation" name="__navigation" type="checkbox">
+<input class="sidebar-toggle" id="__toc" name="__toc" type="checkbox">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+
+<div class="page">
+    <header class="mobile-header">
+        <div class="header-left">
+            <label class="nav-overlay-icon" for="__navigation">
+                <i class="icon">
+                    <svg>
+                        <use href="#svg-menu"></use>
+                    </svg>
+                </i>
+            </label>
+        </div>
+        <div class="header-center">
+            <a href="index.html">
+                <div class="brand">Python-Etcd3 Refactor 0.1.0 文档</div>
+            </a>
+        </div>
+        <div class="header-right">
+            <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+                <i class="icon">
+                    <svg>
+                        <use href="#svg-toc"></use>
+                    </svg>
+                </i>
+            </label>
+        </div>
+    </header>
+    <aside class="sidebar-drawer">
+        <div class="sidebar-container">
+
+            <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+
+
+                <span class="sidebar-brand-text">Python-Etcd3 Refactor 0.1.0 文档</span>
+
+            </a>
+                <form action="search.html" class="sidebar-search-container" method="get">
+                    <input class="sidebar-search" name="q" placeholder=搜索>
+                    <input name="check_keywords" type="hidden" value="yes">
+                    <input name="area" type="hidden" value="default">
+                </form>
+                <div class="sidebar-scroll">
+                    <div class="sidebar-tree">
+                        <p class="caption"><span class="caption-text">Contents:</span></p>
+                        <ul>
+                            <li class="toctree-l1 has-children"><a class="reference internal" href="api/modules.html">etcd3ref</a><input
+                                    class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1"
+                                    type="checkbox"/><label for="toctree-checkbox-1"><i class="icon">
+                                <svg>
+                                    <use href="#svg-arrow-right"></use>
+                                </svg>
+                            </i></label>
+                                <ul>
+                                    <li class="toctree-l2 has-children"><a class="reference internal"
+                                                                           href="api/etcd3ref.html">etcd3ref package</a><input
+                                            class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2"
+                                            type="checkbox"/><label for="toctree-checkbox-2"><i class="icon">
+                                        <svg>
+                                            <use href="#svg-arrow-right"></use>
+                                        </svg>
+                                    </i></label>
+                                        <ul>
+                                            <li class="toctree-l3"><a class="reference internal"
+                                                                      href="api/etcd3ref.etcdrpc.html">etcd3ref.etcdrpc
+                                                package</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </aside>
+    <main class="main">
+        <div class="content">
+            <article role="main">
+                <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+                    <i class="icon">
+                        <svg>
+                            <use href="#svg-toc"></use>
+                        </svg>
+                    </i>
+                </label>
+
+                <section class="genindex-section">
+                    <h1 id="index">索引</h1>
+                    <div class="genindex-jumpbox">
+                        <a href="#A"><strong>A</strong></a> | <a href="#B"><strong>B</strong></a> | <a
+                            href="#C"><strong>C</strong></a> | <a href="#D"><strong>D</strong></a> | <a
+                            href="#E"><strong>E</strong></a> | <a href="#G"><strong>G</strong></a> | <a
+                            href="#H"><strong>H</strong></a> | <a href="#I"><strong>I</strong></a> | <a
+                            href="#K"><strong>K</strong></a> | <a href="#L"><strong>L</strong></a> | <a
+                            href="#M"><strong>M</strong></a> | <a href="#N"><strong>N</strong></a> | <a
+                            href="#P"><strong>P</strong></a> | <a href="#R"><strong>R</strong></a> | <a
+                            href="#S"><strong>S</strong></a> | <a href="#T"><strong>T</strong></a> | <a
+                            href="#U"><strong>U</strong></a> | <a href="#V"><strong>V</strong></a> | <a
+                            href="#W"><strong>W</strong></a> | <a href="#模"><strong>模</strong></a>
+                    </div>
+                </section>
+                <section class="genindex-section" id="A">
+                    <h2>A</h2>
+                    <table class="indextable genindextable" style="width: 100%">
+                        <tr>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.locks.Lock.acquire">acquire()
+                                        (etcd3ref.locks.Lock 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.members.Member.active_alarms">active_alarms()
+                                        (etcd3ref.members.Member property)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.add_AuthServicer_to_server">add_AuthServicer_to_server()
+                                            (在 etcd3ref.etcdrpc.rpc_pb2_grpc 模块中)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.watch.Watcher.add_callback">add_callback()
+                                        (etcd3ref.watch.Watcher 方法)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.add_ClusterServicer_to_server">add_ClusterServicer_to_server()
+                                            (在 etcd3ref.etcdrpc.rpc_pb2_grpc 模块中)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.add_KVServicer_to_server">add_KVServicer_to_server()
+                                            (在 etcd3ref.etcdrpc.rpc_pb2_grpc 模块中)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.add_LeaseServicer_to_server">add_LeaseServicer_to_server()
+                                            (在 etcd3ref.etcdrpc.rpc_pb2_grpc 模块中)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.add_MaintenanceServicer_to_server">add_MaintenanceServicer_to_server()
+                                            (在 etcd3ref.etcdrpc.rpc_pb2_grpc 模块中)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.add_member">add_member()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.add_watch_callback">add_watch_callback()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.add_watch_prefix_callback">add_watch_prefix_callback()
+                                            (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.add_WatchServicer_to_server">add_WatchServicer_to_server()
+                                            (在 etcd3ref.etcdrpc.rpc_pb2_grpc 模块中)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Alarm">Alarm (etcd3ref.client
+                                        中的类)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.MaintenanceServicer.Alarm">Alarm()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.MaintenanceServicer 方法)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.AuthDisable">AuthDisable()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer 方法)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.AuthEnable">AuthEnable()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer 方法)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.Authenticate">Authenticate()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer">AuthServicer
+                                        (etcd3ref.etcdrpc.rpc_pb2_grpc 中的类)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthStub">AuthStub
+                                        (etcd3ref.etcdrpc.rpc_pb2_grpc 中的类)</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+
+                <section class="genindex-section" id="B">
+                    <h2>B</h2>
+                    <table class="indextable genindextable" style="width: 100%">
+                        <tr>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.transactions.BaseCompare">BaseCompare
+                                        (etcd3ref.transactions 中的类)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.transactions.BaseCompare.build_compare">build_compare()
+                                        (etcd3ref.transactions.BaseCompare 方法)</a>
+
+                                        <ul>
+                                            <li><a href="api/etcd3ref.html#etcd3ref.transactions.Create.build_compare">(etcd3ref.transactions.Create
+                                                方法)</a>
+                                            </li>
+                                            <li><a href="api/etcd3ref.html#etcd3ref.transactions.Mod.build_compare">(etcd3ref.transactions.Mod
+                                                方法)</a>
+                                            </li>
+                                            <li><a href="api/etcd3ref.html#etcd3ref.transactions.Value.build_compare">(etcd3ref.transactions.Value
+                                                方法)</a>
+                                            </li>
+                                            <li><a href="api/etcd3ref.html#etcd3ref.transactions.Version.build_compare">(etcd3ref.transactions.Version
+                                                方法)</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.transactions.BaseCompare.build_message">build_message()
+                                        (etcd3ref.transactions.BaseCompare 方法)</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+
+                <section class="genindex-section" id="C">
+                    <h2>C</h2>
+                    <table class="indextable genindextable" style="width: 100%">
+                        <tr>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.watch.Watch.cancel">cancel()
+                                        (etcd3ref.watch.Watch 方法)</a>
+
+                                        <ul>
+                                            <li><a href="api/etcd3ref.html#etcd3ref.watch.Watcher.cancel">(etcd3ref.watch.Watcher
+                                                方法)</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.cancel_watch">cancel_watch()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.client">client() (在 etcd3ref.client
+                                        模块中)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.close">close()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.ClusterServicer">ClusterServicer
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc 中的类)</a>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li><a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.ClusterStub">ClusterStub
+                                        (etcd3ref.etcdrpc.rpc_pb2_grpc 中的类)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.compact">compact()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.KVServicer.Compact">Compact()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.KVServicer 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.exceptions.ConnectionFailedError">ConnectionFailedError</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.exceptions.ConnectionTimeoutError">ConnectionTimeoutError</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.transactions.Create">Create
+                                        (etcd3ref.transactions 中的类)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.create_alarm">create_alarm()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+
+                <section class="genindex-section" id="D">
+                    <h2>D</h2>
+                    <table class="indextable genindextable" style="width: 100%">
+                        <tr>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.defragment">defragment()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.MaintenanceServicer.Defragment">Defragment()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.MaintenanceServicer 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.transactions.Delete">Delete
+                                        (etcd3ref.transactions 中的类)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.delete">delete()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.delete_prefix">delete_prefix()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.events.DeleteEvent">DeleteEvent
+                                        (etcd3ref.events 中的类)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.KVServicer.DeleteRange">DeleteRange()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.KVServicer 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.disarm_alarm">disarm_alarm()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+
+                <section class="genindex-section" id="E">
+                    <h2>E</h2>
+                    <table class="indextable genindextable" style="width: 100%">
+                        <tr>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client">Etcd3Client
+                                        (etcd3ref.client 中的类)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.html#etcd3ref.exceptions.Etcd3Exception">Etcd3Exception</a>
+                                    </li>
+                                    <li>
+                                        etcd3ref
+
+                                        <ul>
+                                            <li><a href="api/etcd3ref.html#module-etcd3ref">模块</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        etcd3ref.client
+
+                                        <ul>
+                                            <li><a href="api/etcd3ref.html#module-etcd3ref.client">模块</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        etcd3ref.etcdrpc
+
+                                        <ul>
+                                            <li><a href="api/etcd3ref.etcdrpc.html#module-etcd3ref.etcdrpc">模块</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        etcd3ref.etcdrpc.auth_pb2
+
+                                        <ul>
+                                            <li>
+                                                <a href="api/etcd3ref.etcdrpc.html#module-etcd3ref.etcdrpc.auth_pb2">模块</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        etcd3ref.etcdrpc.kv_pb2
+
+                                        <ul>
+                                            <li>
+                                                <a href="api/etcd3ref.etcdrpc.html#module-etcd3ref.etcdrpc.kv_pb2">模块</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        etcd3ref.etcdrpc.rpc_pb2
+
+                                        <ul>
+                                            <li>
+                                                <a href="api/etcd3ref.etcdrpc.html#module-etcd3ref.etcdrpc.rpc_pb2">模块</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        etcd3ref.etcdrpc.rpc_pb2_grpc
+
+                                        <ul>
+                                            <li>
+                                                <a href="api/etcd3ref.etcdrpc.html#module-etcd3ref.etcdrpc.rpc_pb2_grpc">模块</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        etcd3ref.events
+
+                                        <ul>
+                                            <li><a href="api/etcd3ref.html#module-etcd3ref.events">模块</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li>
+                                        etcd3ref.exceptions
+
+                                        <ul>
+                                            <li><a href="api/etcd3ref.html#module-etcd3ref.exceptions">模块</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        etcd3ref.leases
+
+                                        <ul>
+                                            <li><a href="api/etcd3ref.html#module-etcd3ref.leases">模块</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        etcd3ref.locks
+
+                                        <ul>
+                                            <li><a href="api/etcd3ref.html#module-etcd3ref.locks">模块</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        etcd3ref.members
+
+                                        <ul>
+                                            <li><a href="api/etcd3ref.html#module-etcd3ref.members">模块</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        etcd3ref.transactions
+
+                                        <ul>
+                                            <li><a href="api/etcd3ref.html#module-etcd3ref.transactions">模块</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        etcd3ref.utils
+
+                                        <ul>
+                                            <li><a href="api/etcd3ref.html#module-etcd3ref.utils">模块</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        etcd3ref.watch
+
+                                        <ul>
+                                            <li><a href="api/etcd3ref.html#module-etcd3ref.watch">模块</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.EtcdTokenCallCredentials">EtcdTokenCallCredentials
+                                        (etcd3ref.client 中的类)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.events.Event">Event (etcd3ref.events
+                                        中的类)</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+
+                <section class="genindex-section" id="G">
+                    <h2>G</h2>
+                    <table class="indextable genindextable" style="width: 100%">
+                        <tr>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.transactions.Get">Get (etcd3ref.transactions
+                                        中的类)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.get">get()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.get_all">get_all()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.get_lease_info">get_lease_info()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.get_prefix">get_prefix()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.get_range">get_range()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.leases.Lease.granted_ttl">granted_ttl()
+                                        (etcd3ref.leases.Lease property)</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+
+                <section class="genindex-section" id="H">
+                    <h2>H</h2>
+                    <table class="indextable genindextable" style="width: 100%">
+                        <tr>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.hash">hash()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.MaintenanceServicer.Hash">Hash()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.MaintenanceServicer 方法)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.MaintenanceServicer.HashKV">HashKV()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.MaintenanceServicer 方法)</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+
+                <section class="genindex-section" id="I">
+                    <h2>I</h2>
+                    <table class="indextable genindextable" style="width: 100%">
+                        <tr>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.exceptions.InternalServerError">InternalServerError</a>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.locks.Lock.is_acquired">is_acquired()
+                                        (etcd3ref.locks.Lock 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.watch.Watch.iterator">iterator()
+                                        (etcd3ref.watch.Watch 方法)</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+
+                <section class="genindex-section" id="K">
+                    <h2>K</h2>
+                    <table class="indextable genindextable" style="width: 100%">
+                        <tr>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.leases.Lease.keys">keys()
+                                        (etcd3ref.leases.Lease property)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.KVMetadata">KVMetadata
+                                        (etcd3ref.client 中的类)</a>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li><a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.KVServicer">KVServicer
+                                        (etcd3ref.etcdrpc.rpc_pb2_grpc 中的类)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.KVStub">KVStub
+                                        (etcd3ref.etcdrpc.rpc_pb2_grpc 中的类)</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+
+                <section class="genindex-section" id="L">
+                    <h2>L</h2>
+                    <table class="indextable genindextable" style="width: 100%">
+                        <tr>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.leases.Lease">Lease (etcd3ref.leases
+                                        中的类)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.lease">lease()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.utils.lease_to_id">lease_to_id() (在
+                                        etcd3ref.utils 模块中)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.LeaseServicer.LeaseGrant">LeaseGrant()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.LeaseServicer 方法)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.LeaseServicer.LeaseKeepAlive">LeaseKeepAlive()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.LeaseServicer 方法)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.LeaseServicer.LeaseLeases">LeaseLeases()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.LeaseServicer 方法)</a>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.LeaseServicer.LeaseRevoke">LeaseRevoke()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.LeaseServicer 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.LeaseServicer">LeaseServicer
+                                        (etcd3ref.etcdrpc.rpc_pb2_grpc 中的类)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.LeaseStub">LeaseStub
+                                        (etcd3ref.etcdrpc.rpc_pb2_grpc 中的类)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.LeaseServicer.LeaseTimeToLive">LeaseTimeToLive()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.LeaseServicer 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.list_alarms">list_alarms()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.locks.Lock">Lock (etcd3ref.locks 中的类)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.lock">lock()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+
+                <section class="genindex-section" id="M">
+                    <h2>M</h2>
+                    <table class="indextable genindextable" style="width: 100%">
+                        <tr>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.MaintenanceServicer">MaintenanceServicer
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc 中的类)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.MaintenanceStub">MaintenanceStub
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc 中的类)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.members.Member">Member (etcd3ref.members
+                                        中的类)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.ClusterServicer.MemberAdd">MemberAdd()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.ClusterServicer 方法)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.ClusterServicer.MemberList">MemberList()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.ClusterServicer 方法)</a>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.ClusterServicer.MemberRemove">MemberRemove()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.ClusterServicer 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.members">members()
+                                        (etcd3ref.client.Etcd3Client property)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.ClusterServicer.MemberUpdate">MemberUpdate()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.ClusterServicer 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.transactions.Mod">Mod (etcd3ref.transactions
+                                        中的类)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.MaintenanceServicer.MoveLeader">MoveLeader()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.MaintenanceServicer 方法)</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+
+                <section class="genindex-section" id="N">
+                    <h2>N</h2>
+                    <table class="indextable genindextable" style="width: 100%">
+                        <tr>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.events.new_event">new_event() (在
+                                        etcd3ref.events 模块中)</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+
+                <section class="genindex-section" id="P">
+                    <h2>P</h2>
+                    <table class="indextable genindextable" style="width: 100%">
+                        <tr>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.exceptions.PreconditionFailedError">PreconditionFailedError</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.utils.prefix_range_end">prefix_range_end()
+                                        (在 etcd3ref.utils 模块中)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.transactions.Put">Put (etcd3ref.transactions
+                                        中的类)</a>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.put">put()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.KVServicer.Put">Put()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.KVServicer 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.put_if_not_exists">put_if_not_exists()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.events.PutEvent">PutEvent (etcd3ref.events
+                                        中的类)</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+
+                <section class="genindex-section" id="R">
+                    <h2>R</h2>
+                    <table class="indextable genindextable" style="width: 100%">
+                        <tr>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.KVServicer.Range">Range()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.KVServicer 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.reconnect">reconnect()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.leases.Lease.refresh">refresh()
+                                        (etcd3ref.leases.Lease 方法)</a>
+
+                                        <ul>
+                                            <li><a href="api/etcd3ref.html#etcd3ref.locks.Lock.refresh">(etcd3ref.locks.Lock
+                                                方法)</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.refresh_lease">refresh_lease()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.locks.Lock.release">release()
+                                        (etcd3ref.locks.Lock 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.leases.Lease.remaining_ttl">remaining_ttl()
+                                        (etcd3ref.leases.Lease property)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.members.Member.remove">remove()
+                                        (etcd3ref.members.Member 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.remove_member">remove_member()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.replace">replace()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.utils.response_to_event_iterator">response_to_event_iterator()
+                                        (在 etcd3ref.utils 模块中)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.exceptions.RevisionCompactedError">RevisionCompactedError</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.leases.Lease.revoke">revoke()
+                                        (etcd3ref.leases.Lease 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.revoke_lease">revoke_lease()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.RoleAdd">RoleAdd()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer 方法)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.RoleDelete">RoleDelete()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer 方法)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.RoleGet">RoleGet()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer 方法)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.RoleGrantPermission">RoleGrantPermission()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer 方法)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.RoleList">RoleList()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer 方法)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.RoleRevokePermission">RoleRevokePermission()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer 方法)</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+
+                <section class="genindex-section" id="S">
+                    <h2>S</h2>
+                    <table class="indextable genindextable" style="width: 100%">
+                        <tr>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.snapshot">snapshot()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.MaintenanceServicer.Snapshot">Snapshot()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.MaintenanceServicer 方法)</a>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Status">Status (etcd3ref.client
+                                        中的类)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.status">status()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.MaintenanceServicer.Status">Status()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.MaintenanceServicer 方法)</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+
+                <section class="genindex-section" id="T">
+                    <h2>T</h2>
+                    <table class="indextable genindextable" style="width: 100%">
+                        <tr>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.utils.to_bytes">to_bytes() (在 etcd3ref.utils
+                                        模块中)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.transaction">transaction()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Transactions">Transactions
+                                        (etcd3ref.client 中的类)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.transactions.Txn">Txn (etcd3ref.transactions
+                                        中的类)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.KVServicer.Txn">Txn()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.KVServicer 方法)</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+
+                <section class="genindex-section" id="U">
+                    <h2>U</h2>
+                    <table class="indextable genindextable" style="width: 100%">
+                        <tr>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.members.Member.update">update()
+                                        (etcd3ref.members.Member 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.update_member">update_member()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.UserAdd">UserAdd()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer 方法)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.UserChangePassword">UserChangePassword()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer 方法)</a>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.UserDelete">UserDelete()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer 方法)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.UserGet">UserGet()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer 方法)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.UserGrantRole">UserGrantRole()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer 方法)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.UserList">UserList()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer 方法)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.UserRevokeRole">UserRevokeRole()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer 方法)</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+
+                <section class="genindex-section" id="V">
+                    <h2>V</h2>
+                    <table class="indextable genindextable" style="width: 100%">
+                        <tr>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.transactions.Value">Value
+                                        (etcd3ref.transactions 中的类)</a>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.transactions.Version">Version
+                                        (etcd3ref.transactions 中的类)</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+
+                <section class="genindex-section" id="W">
+                    <h2>W</h2>
+                    <table class="indextable genindextable" style="width: 100%">
+                        <tr>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.watch.Watch">Watch (etcd3ref.watch 中的类)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.watch">watch()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                    <li>
+                                        <a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.WatchServicer.Watch">Watch()
+                                            (etcd3ref.etcdrpc.rpc_pb2_grpc.WatchServicer 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.watch_once">watch_once()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.watch_once_response">watch_once_response()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.watch_prefix">watch_prefix()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.watch_prefix_once">watch_prefix_once()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li>
+                                        <a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.watch_prefix_once_response">watch_prefix_once_response()
+                                            (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.watch_prefix_response">watch_prefix_response()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.client.Etcd3Client.watch_response">watch_response()
+                                        (etcd3ref.client.Etcd3Client 方法)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.watch.Watcher">Watcher (etcd3ref.watch
+                                        中的类)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.watch.WatchResponse">WatchResponse
+                                        (etcd3ref.watch 中的类)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.WatchServicer">WatchServicer
+                                        (etcd3ref.etcdrpc.rpc_pb2_grpc 中的类)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.etcdrpc.html#etcd3ref.etcdrpc.rpc_pb2_grpc.WatchStub">WatchStub
+                                        (etcd3ref.etcdrpc.rpc_pb2_grpc 中的类)</a>
+                                    </li>
+                                    <li><a href="api/etcd3ref.html#etcd3ref.exceptions.WatchTimedOut">WatchTimedOut</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+
+                <section class="genindex-section" id="模">
+                    <h2>模</h2>
+                    <table class="indextable genindextable" style="width: 100%">
+                        <tr>
+                            <td style="width: 33%; vertical-align: top;">
+                                <ul>
+                                    <li>
+                                        模块
+
+                                        <ul>
+                                            <li><a href="api/etcd3ref.html#module-etcd3ref">etcd3ref</a>
+                                            </li>
+                                            <li><a href="api/etcd3ref.html#module-etcd3ref.client">etcd3ref.client</a>
+                                            </li>
+                                            <li><a href="api/etcd3ref.etcdrpc.html#module-etcd3ref.etcdrpc">etcd3ref.etcdrpc</a>
+                                            </li>
+                                            <li><a href="api/etcd3ref.etcdrpc.html#module-etcd3ref.etcdrpc.auth_pb2">etcd3ref.etcdrpc.auth_pb2</a>
+                                            </li>
+                                            <li><a href="api/etcd3ref.etcdrpc.html#module-etcd3ref.etcdrpc.kv_pb2">etcd3ref.etcdrpc.kv_pb2</a>
+                                            </li>
+                                            <li><a href="api/etcd3ref.etcdrpc.html#module-etcd3ref.etcdrpc.rpc_pb2">etcd3ref.etcdrpc.rpc_pb2</a>
+                                            </li>
+                                            <li>
+                                                <a href="api/etcd3ref.etcdrpc.html#module-etcd3ref.etcdrpc.rpc_pb2_grpc">etcd3ref.etcdrpc.rpc_pb2_grpc</a>
+                                            </li>
+                                            <li><a href="api/etcd3ref.html#module-etcd3ref.events">etcd3ref.events</a>
+                                            </li>
+                                            <li><a href="api/etcd3ref.html#module-etcd3ref.exceptions">etcd3ref.exceptions</a>
+                                            </li>
+                                            <li><a href="api/etcd3ref.html#module-etcd3ref.leases">etcd3ref.leases</a>
+                                            </li>
+                                            <li><a href="api/etcd3ref.html#module-etcd3ref.locks">etcd3ref.locks</a>
+                                            </li>
+                                            <li><a href="api/etcd3ref.html#module-etcd3ref.members">etcd3ref.members</a>
+                                            </li>
+                                            <li><a href="api/etcd3ref.html#module-etcd3ref.transactions">etcd3ref.transactions</a>
+                                            </li>
+                                            <li><a href="api/etcd3ref.html#module-etcd3ref.utils">etcd3ref.utils</a>
+                                            </li>
+                                            <li><a href="api/etcd3ref.html#module-etcd3ref.watch">etcd3ref.watch</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+
+
+            </article>
+            <footer>
+
+                <div class="related-pages">
+
+
+                </div>
+
+                <div class="related-information">
+                    Copyright &#169; 2021, Hochikong
+                    |
+                    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+                    and
+                    <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+                    <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+                </div>
+
+            </footer>
+        </div>
+        <aside class="toc-drawer no-toc">
+
+
+        </aside>
+    </main>
+</div>
+</body>
+</html>

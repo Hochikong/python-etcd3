@@ -1,0 +1,968 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width,initial-scale=1" name="viewport"/>
+    <link href="../genindex.html" rel="index" title="索引"/>
+    <link href="../search.html" rel="search" title="搜索"/>
+    <link href="etcd3ref.html" rel="prev" title="etcd3ref package"/>
+
+    <meta content="sphinx-3.4.3, furo 2020.12.30.beta24" name="generator"/>
+    <title>etcd3ref.etcdrpc package - Python-Etcd3 Refactor 0.1.0 文档</title>
+    <link href="../_static/styles/furo.css?digest=33d2fc4f3f180ec1ffc6524e273e21d7d58cbe49" rel="stylesheet">
+    <link href="../_static/pygments.css" rel="stylesheet">
+    <link href="../_static/pygments_dark.css" media="(prefers-color-scheme: dark)" rel="stylesheet">
+
+
+    <style>
+        :root {
+            --color-code-background: #f8f8f8;
+            --color-code-foreground: black;
+
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-code-background: #202020;
+                --color-code-foreground: #d0d0d0;
+
+            }
+        }
+
+        /* For allowing end-user-specific overrides */
+        .override-light {
+            --color-code-background: #f8f8f8;
+            --color-code-foreground: black;
+
+        }
+
+        .override-dark {
+            --color-code-background: #202020;
+            --color-code-foreground: #d0d0d0;
+
+        }
+    </style>
+    <link href="../_static/styles/furo-extensions.css?digest=26485485040e7aaf717c13fd0188a5ad2c2deb60" rel="stylesheet">
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script defer="defer" src="../_static/jquery.js"></script>
+    <script defer="defer" src="../_static/underscore.js"></script>
+    <script defer="defer" src="../_static/doctools.js"></script>
+    <script defer="defer" src="../_static/translations.js"></script>
+    <script defer src="../_static/scripts/main.js?digest=e931d09b2a40c1bb82b542effe772014573baf67"></script>
+</head>
+<body dir="">
+
+<svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="svg-toc" viewBox="0 0 24 24">
+        <title>Contents</title>
+        <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+             stroke-width="1.5" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0h24v24H0z" stroke="none"/>
+            <line x1="4" x2="20" y1="6" y2="6"/>
+            <line x1="10" x2="20" y1="12" y2="12"/>
+            <line x1="6" x2="20" y1="18" y2="18"/>
+        </svg>
+    </symbol>
+    <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg class="feather feather-menu" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+             stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+             xmlns="http://www.w3.org/2000/svg">
+            <line x1="3" x2="21" y1="12" y2="12"></line>
+            <line x1="3" x2="21" y1="6" y2="6"></line>
+            <line x1="3" x2="21" y1="18" y2="18"></line>
+        </svg>
+    </symbol>
+    <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg class="feather feather-chevron-right" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+             stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+             xmlns="http://www.w3.org/2000/svg">
+            <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+    </symbol>
+</svg>
+
+<input class="sidebar-toggle" id="__navigation" name="__navigation" type="checkbox">
+<input class="sidebar-toggle" id="__toc" name="__toc" type="checkbox">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+
+<div class="page">
+    <header class="mobile-header">
+        <div class="header-left">
+            <label class="nav-overlay-icon" for="__navigation">
+                <i class="icon">
+                    <svg>
+                        <use href="#svg-menu"></use>
+                    </svg>
+                </i>
+            </label>
+        </div>
+        <div class="header-center">
+            <a href="../index.html">
+                <div class="brand">Python-Etcd3 Refactor 0.1.0 文档</div>
+            </a>
+        </div>
+        <div class="header-right">
+            <label class="toc-overlay-icon toc-header-icon" for="__toc">
+                <i class="icon">
+                    <svg>
+                        <use href="#svg-toc"></use>
+                    </svg>
+                </i>
+            </label>
+        </div>
+    </header>
+    <aside class="sidebar-drawer">
+        <div class="sidebar-container">
+
+            <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+
+
+                <span class="sidebar-brand-text">Python-Etcd3 Refactor 0.1.0 文档</span>
+
+            </a>
+                <form action="../search.html" class="sidebar-search-container" method="get">
+                    <input class="sidebar-search" name="q" placeholder=搜索>
+                    <input name="check_keywords" type="hidden" value="yes">
+                    <input name="area" type="hidden" value="default">
+                </form>
+                <div class="sidebar-scroll">
+                    <div class="sidebar-tree">
+                        <p class="caption"><span class="caption-text">Contents:</span></p>
+                        <ul class="current">
+                            <li class="toctree-l1 current has-children"><a class="reference internal"
+                                                                           href="modules.html">etcd3ref</a><input
+                                    checked="" class="toctree-checkbox" id="toctree-checkbox-1"
+                                    name="toctree-checkbox-1" type="checkbox"/><label for="toctree-checkbox-1"><i
+                                    class="icon">
+                                <svg>
+                                    <use href="#svg-arrow-right"></use>
+                                </svg>
+                            </i></label>
+                                <ul class="current">
+                                    <li class="toctree-l2 current has-children"><a class="reference internal"
+                                                                                   href="etcd3ref.html">etcd3ref
+                                        package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2"
+                                                          name="toctree-checkbox-2" type="checkbox"/><label
+                                            for="toctree-checkbox-2"><i class="icon">
+                                        <svg>
+                                            <use href="#svg-arrow-right"></use>
+                                        </svg>
+                                    </i></label>
+                                        <ul class="current">
+                                            <li class="toctree-l3 current current-page"><a
+                                                    class="current reference internal" href="#">etcd3ref.etcdrpc
+                                                package</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </aside>
+    <main class="main">
+        <div class="content">
+            <article role="main">
+                <label class="toc-overlay-icon toc-content-icon" for="__toc">
+                    <i class="icon">
+                        <svg>
+                            <use href="#svg-toc"></use>
+                        </svg>
+                    </i>
+                </label>
+                <div class="section" id="etcd3ref-etcdrpc-package">
+                    <h1>etcd3ref.etcdrpc package<a class="headerlink" href="#etcd3ref-etcdrpc-package"
+                                                   title="永久链接至标题">¶</a></h1>
+                    <div class="section" id="submodules">
+                        <h2>Submodules<a class="headerlink" href="#submodules" title="永久链接至标题">¶</a></h2>
+                    </div>
+                    <div class="section" id="module-etcd3ref.etcdrpc.auth_pb2">
+                        <span id="etcd3ref-etcdrpc-auth-pb2-module"></span>
+                        <h2>etcd3ref.etcdrpc.auth_pb2 module<a class="headerlink"
+                                                               href="#module-etcd3ref.etcdrpc.auth_pb2" title="永久链接至标题">¶</a>
+                        </h2>
+                    </div>
+                    <div class="section" id="module-etcd3ref.etcdrpc.kv_pb2">
+                        <span id="etcd3ref-etcdrpc-kv-pb2-module"></span>
+                        <h2>etcd3ref.etcdrpc.kv_pb2 module<a class="headerlink" href="#module-etcd3ref.etcdrpc.kv_pb2"
+                                                             title="永久链接至标题">¶</a></h2>
+                    </div>
+                    <div class="section" id="module-etcd3ref.etcdrpc.rpc_pb2">
+                        <span id="etcd3ref-etcdrpc-rpc-pb2-module"></span>
+                        <h2>etcd3ref.etcdrpc.rpc_pb2 module<a class="headerlink" href="#module-etcd3ref.etcdrpc.rpc_pb2"
+                                                              title="永久链接至标题">¶</a></h2>
+                    </div>
+                    <div class="section" id="module-etcd3ref.etcdrpc.rpc_pb2_grpc">
+                        <span id="etcd3ref-etcdrpc-rpc-pb2-grpc-module"></span>
+                        <h2>etcd3ref.etcdrpc.rpc_pb2_grpc module<a class="headerlink"
+                                                                   href="#module-etcd3ref.etcdrpc.rpc_pb2_grpc"
+                                                                   title="永久链接至标题">¶</a></h2>
+                        <dl class="py class">
+                            <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer">
+                                <em class="property">class </em><code class="sig-prename descclassname">etcd3ref.etcdrpc.rpc_pb2_grpc.</code><code
+                                    class="sig-name descname">AuthServicer</code><a class="headerlink"
+                                                                                    href="#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer"
+                                                                                    title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code>
+                            </p>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.AuthDisable">
+                                        <code class="sig-name descname">AuthDisable</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">request</span></em>, <em class="sig-param"><span
+                                            class="n">context</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink"
+                                            href="#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.AuthDisable"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>AuthDisable disables authentication.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.AuthEnable">
+                                        <code class="sig-name descname">AuthEnable</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">request</span></em>, <em class="sig-param"><span
+                                            class="n">context</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink"
+                                            href="#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.AuthEnable"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>AuthEnable enables authentication.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.Authenticate">
+                                        <code class="sig-name descname">Authenticate</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">request</span></em>, <em class="sig-param"><span
+                                            class="n">context</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink"
+                                            href="#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.Authenticate"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Authenticate processes an authenticate request.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.RoleAdd">
+                                        <code class="sig-name descname">RoleAdd</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">request</span></em>, <em class="sig-param"><span
+                                            class="n">context</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink"
+                                            href="#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.RoleAdd"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>RoleAdd adds a new role.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.RoleDelete">
+                                        <code class="sig-name descname">RoleDelete</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">request</span></em>, <em class="sig-param"><span
+                                            class="n">context</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink"
+                                            href="#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.RoleDelete"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>RoleDelete deletes a specified role.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.RoleGet">
+                                        <code class="sig-name descname">RoleGet</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">request</span></em>, <em class="sig-param"><span
+                                            class="n">context</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink"
+                                            href="#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.RoleGet"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>RoleGet gets detailed role information.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.RoleGrantPermission">
+                                        <code class="sig-name descname">RoleGrantPermission</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">request</span></em>, <em class="sig-param"><span
+                                            class="n">context</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink"
+                                            href="#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.RoleGrantPermission"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>RoleGrantPermission grants a permission of a specified key or range to a
+                                        specified role.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.RoleList">
+                                        <code class="sig-name descname">RoleList</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">request</span></em>, <em class="sig-param"><span
+                                            class="n">context</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink"
+                                            href="#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.RoleList" title="永久链接至目标">¶</a>
+                                    </dt>
+                                    <dd><p>RoleList gets lists of all roles.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.RoleRevokePermission">
+                                        <code class="sig-name descname">RoleRevokePermission</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">request</span></em>, <em class="sig-param"><span
+                                            class="n">context</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink"
+                                            href="#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.RoleRevokePermission"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>RoleRevokePermission revokes a key or range permission of a specified
+                                        role.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.UserAdd">
+                                        <code class="sig-name descname">UserAdd</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">request</span></em>, <em class="sig-param"><span
+                                            class="n">context</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink"
+                                            href="#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.UserAdd"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>UserAdd adds a new user.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.UserChangePassword">
+                                        <code class="sig-name descname">UserChangePassword</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">request</span></em>, <em class="sig-param"><span
+                                            class="n">context</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink"
+                                            href="#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.UserChangePassword"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>UserChangePassword changes the password of a specified user.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.UserDelete">
+                                        <code class="sig-name descname">UserDelete</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">request</span></em>, <em class="sig-param"><span
+                                            class="n">context</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink"
+                                            href="#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.UserDelete"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>UserDelete deletes a specified user.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.UserGet">
+                                        <code class="sig-name descname">UserGet</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">request</span></em>, <em class="sig-param"><span
+                                            class="n">context</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink"
+                                            href="#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.UserGet"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>UserGet gets detailed user information.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.UserGrantRole">
+                                        <code class="sig-name descname">UserGrantRole</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">request</span></em>, <em class="sig-param"><span
+                                            class="n">context</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink"
+                                            href="#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.UserGrantRole"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>UserGrant grants a role to a specified user.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.UserList">
+                                        <code class="sig-name descname">UserList</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">request</span></em>, <em class="sig-param"><span
+                                            class="n">context</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink"
+                                            href="#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.UserList" title="永久链接至目标">¶</a>
+                                    </dt>
+                                    <dd><p>UserList gets a list of all users.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.UserRevokeRole">
+                                        <code class="sig-name descname">UserRevokeRole</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">request</span></em>, <em class="sig-param"><span
+                                            class="n">context</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink"
+                                            href="#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthServicer.UserRevokeRole"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>UserRevokeRole revokes a role of specified user.</p>
+                                    </dd>
+                                </dl>
+                            </dd>
+                        </dl>
+                        <dl class="py class">
+                            <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.AuthStub">
+                                <em class="property">class </em><code class="sig-prename descclassname">etcd3ref.etcdrpc.rpc_pb2_grpc.</code><code
+                                    class="sig-name descname">AuthStub</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">channel</span></em><span
+                                    class="sig-paren">)</span><a class="headerlink"
+                                                                 href="#etcd3ref.etcdrpc.rpc_pb2_grpc.AuthStub"
+                                                                 title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code>
+                            </p>
+                            </dd>
+                        </dl>
+                        <dl class="py class">
+                            <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.ClusterServicer">
+                                <em class="property">class </em><code class="sig-prename descclassname">etcd3ref.etcdrpc.rpc_pb2_grpc.</code><code
+                                    class="sig-name descname">ClusterServicer</code><a class="headerlink"
+                                                                                       href="#etcd3ref.etcdrpc.rpc_pb2_grpc.ClusterServicer"
+                                                                                       title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code>
+                            </p>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.ClusterServicer.MemberAdd">
+                                        <code class="sig-name descname">MemberAdd</code><span class="sig-paren">(</span><em
+                                            class="sig-param"><span class="n">request</span></em>, <em
+                                            class="sig-param"><span class="n">context</span></em><span
+                                            class="sig-paren">)</span><a class="headerlink"
+                                                                         href="#etcd3ref.etcdrpc.rpc_pb2_grpc.ClusterServicer.MemberAdd"
+                                                                         title="永久链接至目标">¶</a></dt>
+                                    <dd><p>MemberAdd adds a member into the cluster.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.ClusterServicer.MemberList">
+                                        <code class="sig-name descname">MemberList</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">request</span></em>, <em class="sig-param"><span
+                                            class="n">context</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink"
+                                            href="#etcd3ref.etcdrpc.rpc_pb2_grpc.ClusterServicer.MemberList"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>MemberList lists all the members in the cluster.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.ClusterServicer.MemberRemove">
+                                        <code class="sig-name descname">MemberRemove</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">request</span></em>, <em class="sig-param"><span
+                                            class="n">context</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink"
+                                            href="#etcd3ref.etcdrpc.rpc_pb2_grpc.ClusterServicer.MemberRemove"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>MemberRemove removes an existing member from the cluster.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.ClusterServicer.MemberUpdate">
+                                        <code class="sig-name descname">MemberUpdate</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">request</span></em>, <em class="sig-param"><span
+                                            class="n">context</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink"
+                                            href="#etcd3ref.etcdrpc.rpc_pb2_grpc.ClusterServicer.MemberUpdate"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>MemberUpdate updates the member configuration.</p>
+                                    </dd>
+                                </dl>
+                            </dd>
+                        </dl>
+                        <dl class="py class">
+                            <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.ClusterStub">
+                                <em class="property">class </em><code class="sig-prename descclassname">etcd3ref.etcdrpc.rpc_pb2_grpc.</code><code
+                                    class="sig-name descname">ClusterStub</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">channel</span></em><span
+                                    class="sig-paren">)</span><a class="headerlink"
+                                                                 href="#etcd3ref.etcdrpc.rpc_pb2_grpc.ClusterStub"
+                                                                 title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code>
+                            </p>
+                            </dd>
+                        </dl>
+                        <dl class="py class">
+                            <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.KVServicer">
+                                <em class="property">class </em><code class="sig-prename descclassname">etcd3ref.etcdrpc.rpc_pb2_grpc.</code><code
+                                    class="sig-name descname">KVServicer</code><a class="headerlink"
+                                                                                  href="#etcd3ref.etcdrpc.rpc_pb2_grpc.KVServicer"
+                                                                                  title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code>
+                            </p>
+                                <p>for grpc-gateway</p>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.KVServicer.Compact">
+                                        <code class="sig-name descname">Compact</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">request</span></em>, <em class="sig-param"><span
+                                            class="n">context</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.etcdrpc.rpc_pb2_grpc.KVServicer.Compact"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Compact compacts the event history in the etcd key-value store. The key-value
+                                        store should be periodically compacted or the event history will continue to
+                                        grow
+                                        indefinitely.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.KVServicer.DeleteRange">
+                                        <code class="sig-name descname">DeleteRange</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">request</span></em>, <em class="sig-param"><span
+                                            class="n">context</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink"
+                                            href="#etcd3ref.etcdrpc.rpc_pb2_grpc.KVServicer.DeleteRange"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>DeleteRange deletes the given range from the key-value store.
+                                        A delete request increments the revision of the key-value store
+                                        and generates a delete event in the event history for every deleted key.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.KVServicer.Put">
+                                        <code class="sig-name descname">Put</code><span class="sig-paren">(</span><em
+                                            class="sig-param"><span class="n">request</span></em>, <em
+                                            class="sig-param"><span class="n">context</span></em><span
+                                            class="sig-paren">)</span><a class="headerlink"
+                                                                         href="#etcd3ref.etcdrpc.rpc_pb2_grpc.KVServicer.Put"
+                                                                         title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Put puts the given key into the key-value store.
+                                        A put request increments the revision of the key-value store
+                                        and generates one event in the event history.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.KVServicer.Range">
+                                        <code class="sig-name descname">Range</code><span class="sig-paren">(</span><em
+                                            class="sig-param"><span class="n">request</span></em>, <em
+                                            class="sig-param"><span class="n">context</span></em><span
+                                            class="sig-paren">)</span><a class="headerlink"
+                                                                         href="#etcd3ref.etcdrpc.rpc_pb2_grpc.KVServicer.Range"
+                                                                         title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Range gets the keys in the range from the key-value store.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.KVServicer.Txn">
+                                        <code class="sig-name descname">Txn</code><span class="sig-paren">(</span><em
+                                            class="sig-param"><span class="n">request</span></em>, <em
+                                            class="sig-param"><span class="n">context</span></em><span
+                                            class="sig-paren">)</span><a class="headerlink"
+                                                                         href="#etcd3ref.etcdrpc.rpc_pb2_grpc.KVServicer.Txn"
+                                                                         title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Txn processes multiple requests in a single transaction.
+                                        A txn request increments the revision of the key-value store
+                                        and generates events with the same revision for every completed request.
+                                        It is not allowed to modify the same key several times within one txn.</p>
+                                    </dd>
+                                </dl>
+                            </dd>
+                        </dl>
+                        <dl class="py class">
+                            <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.KVStub">
+                                <em class="property">class </em><code class="sig-prename descclassname">etcd3ref.etcdrpc.rpc_pb2_grpc.</code><code
+                                    class="sig-name descname">KVStub</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">channel</span></em><span
+                                    class="sig-paren">)</span><a class="headerlink"
+                                                                 href="#etcd3ref.etcdrpc.rpc_pb2_grpc.KVStub"
+                                                                 title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code>
+                            </p>
+                                <p>for grpc-gateway</p>
+                            </dd>
+                        </dl>
+                        <dl class="py class">
+                            <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.LeaseServicer">
+                                <em class="property">class </em><code class="sig-prename descclassname">etcd3ref.etcdrpc.rpc_pb2_grpc.</code><code
+                                    class="sig-name descname">LeaseServicer</code><a class="headerlink"
+                                                                                     href="#etcd3ref.etcdrpc.rpc_pb2_grpc.LeaseServicer"
+                                                                                     title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code>
+                            </p>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.LeaseServicer.LeaseGrant">
+                                        <code class="sig-name descname">LeaseGrant</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">request</span></em>, <em class="sig-param"><span
+                                            class="n">context</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink"
+                                            href="#etcd3ref.etcdrpc.rpc_pb2_grpc.LeaseServicer.LeaseGrant"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>LeaseGrant creates a lease which expires if the server does not receive a
+                                        keepAlive
+                                        within a given time to live period. All keys attached to the lease will be
+                                        expired and
+                                        deleted if the lease expires. Each expired key generates a delete event in the
+                                        event history.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.LeaseServicer.LeaseKeepAlive">
+                                        <code class="sig-name descname">LeaseKeepAlive</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span class="n">request_iterator</span></em>,
+                                        <em class="sig-param"><span class="n">context</span></em><span
+                                            class="sig-paren">)</span><a class="headerlink"
+                                                                         href="#etcd3ref.etcdrpc.rpc_pb2_grpc.LeaseServicer.LeaseKeepAlive"
+                                                                         title="永久链接至目标">¶</a></dt>
+                                    <dd><p>LeaseKeepAlive keeps the lease alive by streaming keep alive requests from
+                                        the client
+                                        to the server and streaming keep alive responses from the server to the
+                                        client.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.LeaseServicer.LeaseLeases">
+                                        <code class="sig-name descname">LeaseLeases</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">request</span></em>, <em class="sig-param"><span
+                                            class="n">context</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink"
+                                            href="#etcd3ref.etcdrpc.rpc_pb2_grpc.LeaseServicer.LeaseLeases"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>LeaseLeases lists all existing leases.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.LeaseServicer.LeaseRevoke">
+                                        <code class="sig-name descname">LeaseRevoke</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">request</span></em>, <em class="sig-param"><span
+                                            class="n">context</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink"
+                                            href="#etcd3ref.etcdrpc.rpc_pb2_grpc.LeaseServicer.LeaseRevoke"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>LeaseRevoke revokes a lease. All keys attached to the lease will expire and
+                                        be deleted.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.LeaseServicer.LeaseTimeToLive">
+                                        <code class="sig-name descname">LeaseTimeToLive</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">request</span></em>, <em class="sig-param"><span
+                                            class="n">context</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink"
+                                            href="#etcd3ref.etcdrpc.rpc_pb2_grpc.LeaseServicer.LeaseTimeToLive"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>LeaseTimeToLive retrieves lease information.</p>
+                                    </dd>
+                                </dl>
+                            </dd>
+                        </dl>
+                        <dl class="py class">
+                            <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.LeaseStub">
+                                <em class="property">class </em><code class="sig-prename descclassname">etcd3ref.etcdrpc.rpc_pb2_grpc.</code><code
+                                    class="sig-name descname">LeaseStub</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">channel</span></em><span
+                                    class="sig-paren">)</span><a class="headerlink"
+                                                                 href="#etcd3ref.etcdrpc.rpc_pb2_grpc.LeaseStub"
+                                                                 title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code>
+                            </p>
+                            </dd>
+                        </dl>
+                        <dl class="py class">
+                            <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.MaintenanceServicer">
+                                <em class="property">class </em><code class="sig-prename descclassname">etcd3ref.etcdrpc.rpc_pb2_grpc.</code><code
+                                    class="sig-name descname">MaintenanceServicer</code><a class="headerlink"
+                                                                                           href="#etcd3ref.etcdrpc.rpc_pb2_grpc.MaintenanceServicer"
+                                                                                           title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code>
+                            </p>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.MaintenanceServicer.Alarm">
+                                        <code class="sig-name descname">Alarm</code><span class="sig-paren">(</span><em
+                                            class="sig-param"><span class="n">request</span></em>, <em
+                                            class="sig-param"><span class="n">context</span></em><span
+                                            class="sig-paren">)</span><a class="headerlink"
+                                                                         href="#etcd3ref.etcdrpc.rpc_pb2_grpc.MaintenanceServicer.Alarm"
+                                                                         title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Alarm activates, deactivates, and queries alarms regarding cluster
+                                        health.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.MaintenanceServicer.Defragment">
+                                        <code class="sig-name descname">Defragment</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">request</span></em>, <em class="sig-param"><span
+                                            class="n">context</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink"
+                                            href="#etcd3ref.etcdrpc.rpc_pb2_grpc.MaintenanceServicer.Defragment"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Defragment defragments a member’s backend database to recover storage
+                                        space.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.MaintenanceServicer.Hash">
+                                        <code class="sig-name descname">Hash</code><span class="sig-paren">(</span><em
+                                            class="sig-param"><span class="n">request</span></em>, <em
+                                            class="sig-param"><span class="n">context</span></em><span
+                                            class="sig-paren">)</span><a class="headerlink"
+                                                                         href="#etcd3ref.etcdrpc.rpc_pb2_grpc.MaintenanceServicer.Hash"
+                                                                         title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Hash computes the hash of the KV’s backend.
+                                        This is designed for testing; do not use this in production when there
+                                        are ongoing transactions.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.MaintenanceServicer.HashKV">
+                                        <code class="sig-name descname">HashKV</code><span class="sig-paren">(</span><em
+                                            class="sig-param"><span class="n">request</span></em>, <em
+                                            class="sig-param"><span class="n">context</span></em><span
+                                            class="sig-paren">)</span><a class="headerlink"
+                                                                         href="#etcd3ref.etcdrpc.rpc_pb2_grpc.MaintenanceServicer.HashKV"
+                                                                         title="永久链接至目标">¶</a></dt>
+                                    <dd><p>HashKV computes the hash of all MVCC keys up to a given revision.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.MaintenanceServicer.MoveLeader">
+                                        <code class="sig-name descname">MoveLeader</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">request</span></em>, <em class="sig-param"><span
+                                            class="n">context</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink"
+                                            href="#etcd3ref.etcdrpc.rpc_pb2_grpc.MaintenanceServicer.MoveLeader"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>MoveLeader requests current leader node to transfer its leadership to
+                                        transferee.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.MaintenanceServicer.Snapshot">
+                                        <code class="sig-name descname">Snapshot</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">request</span></em>, <em class="sig-param"><span
+                                            class="n">context</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink"
+                                            href="#etcd3ref.etcdrpc.rpc_pb2_grpc.MaintenanceServicer.Snapshot"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Snapshot sends a snapshot of the entire backend from a member over a stream
+                                        to a client.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.MaintenanceServicer.Status">
+                                        <code class="sig-name descname">Status</code><span class="sig-paren">(</span><em
+                                            class="sig-param"><span class="n">request</span></em>, <em
+                                            class="sig-param"><span class="n">context</span></em><span
+                                            class="sig-paren">)</span><a class="headerlink"
+                                                                         href="#etcd3ref.etcdrpc.rpc_pb2_grpc.MaintenanceServicer.Status"
+                                                                         title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Status gets the status of the member.</p>
+                                    </dd>
+                                </dl>
+                            </dd>
+                        </dl>
+                        <dl class="py class">
+                            <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.MaintenanceStub">
+                                <em class="property">class </em><code class="sig-prename descclassname">etcd3ref.etcdrpc.rpc_pb2_grpc.</code><code
+                                    class="sig-name descname">MaintenanceStub</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">channel</span></em><span
+                                    class="sig-paren">)</span><a class="headerlink"
+                                                                 href="#etcd3ref.etcdrpc.rpc_pb2_grpc.MaintenanceStub"
+                                                                 title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code>
+                            </p>
+                            </dd>
+                        </dl>
+                        <dl class="py class">
+                            <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.WatchServicer">
+                                <em class="property">class </em><code class="sig-prename descclassname">etcd3ref.etcdrpc.rpc_pb2_grpc.</code><code
+                                    class="sig-name descname">WatchServicer</code><a class="headerlink"
+                                                                                     href="#etcd3ref.etcdrpc.rpc_pb2_grpc.WatchServicer"
+                                                                                     title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code>
+                            </p>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.WatchServicer.Watch">
+                                        <code class="sig-name descname">Watch</code><span class="sig-paren">(</span><em
+                                            class="sig-param"><span class="n">request_iterator</span></em>, <em
+                                            class="sig-param"><span class="n">context</span></em><span
+                                            class="sig-paren">)</span><a class="headerlink"
+                                                                         href="#etcd3ref.etcdrpc.rpc_pb2_grpc.WatchServicer.Watch"
+                                                                         title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Watch watches for events happening or that have happened. Both input and
+                                        output
+                                        are streams; the input stream is for creating and canceling watchers and the
+                                        output
+                                        stream sends events. One watch RPC can watch on multiple key ranges, streaming
+                                        events
+                                        for several watches at once. The entire event history can be watched starting
+                                        from the
+                                        last compaction revision.</p>
+                                    </dd>
+                                </dl>
+                            </dd>
+                        </dl>
+                        <dl class="py class">
+                            <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.WatchStub">
+                                <em class="property">class </em><code class="sig-prename descclassname">etcd3ref.etcdrpc.rpc_pb2_grpc.</code><code
+                                    class="sig-name descname">WatchStub</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">channel</span></em><span
+                                    class="sig-paren">)</span><a class="headerlink"
+                                                                 href="#etcd3ref.etcdrpc.rpc_pb2_grpc.WatchStub"
+                                                                 title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code>
+                            </p>
+                            </dd>
+                        </dl>
+                        <dl class="py function">
+                            <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.add_AuthServicer_to_server">
+                                <code class="sig-prename descclassname">etcd3ref.etcdrpc.rpc_pb2_grpc.</code><code
+                                    class="sig-name descname">add_AuthServicer_to_server</code><span
+                                    class="sig-paren">(</span><em class="sig-param"><span class="n">servicer</span></em>,
+                                <em class="sig-param"><span class="n">server</span></em><span class="sig-paren">)</span><a
+                                    class="headerlink" href="#etcd3ref.etcdrpc.rpc_pb2_grpc.add_AuthServicer_to_server"
+                                    title="永久链接至目标">¶</a></dt>
+                            <dd></dd>
+                        </dl>
+                        <dl class="py function">
+                            <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.add_ClusterServicer_to_server">
+                                <code class="sig-prename descclassname">etcd3ref.etcdrpc.rpc_pb2_grpc.</code><code
+                                    class="sig-name descname">add_ClusterServicer_to_server</code><span
+                                    class="sig-paren">(</span><em class="sig-param"><span class="n">servicer</span></em>,
+                                <em class="sig-param"><span class="n">server</span></em><span class="sig-paren">)</span><a
+                                    class="headerlink"
+                                    href="#etcd3ref.etcdrpc.rpc_pb2_grpc.add_ClusterServicer_to_server" title="永久链接至目标">¶</a>
+                            </dt>
+                            <dd></dd>
+                        </dl>
+                        <dl class="py function">
+                            <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.add_KVServicer_to_server">
+                                <code class="sig-prename descclassname">etcd3ref.etcdrpc.rpc_pb2_grpc.</code><code
+                                    class="sig-name descname">add_KVServicer_to_server</code><span
+                                    class="sig-paren">(</span><em class="sig-param"><span class="n">servicer</span></em>,
+                                <em class="sig-param"><span class="n">server</span></em><span class="sig-paren">)</span><a
+                                    class="headerlink" href="#etcd3ref.etcdrpc.rpc_pb2_grpc.add_KVServicer_to_server"
+                                    title="永久链接至目标">¶</a></dt>
+                            <dd></dd>
+                        </dl>
+                        <dl class="py function">
+                            <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.add_LeaseServicer_to_server">
+                                <code class="sig-prename descclassname">etcd3ref.etcdrpc.rpc_pb2_grpc.</code><code
+                                    class="sig-name descname">add_LeaseServicer_to_server</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">servicer</span></em>, <em class="sig-param"><span
+                                    class="n">server</span></em><span class="sig-paren">)</span><a class="headerlink"
+                                                                                                   href="#etcd3ref.etcdrpc.rpc_pb2_grpc.add_LeaseServicer_to_server"
+                                                                                                   title="永久链接至目标">¶</a>
+                            </dt>
+                            <dd></dd>
+                        </dl>
+                        <dl class="py function">
+                            <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.add_MaintenanceServicer_to_server">
+                                <code class="sig-prename descclassname">etcd3ref.etcdrpc.rpc_pb2_grpc.</code><code
+                                    class="sig-name descname">add_MaintenanceServicer_to_server</code><span
+                                    class="sig-paren">(</span><em class="sig-param"><span class="n">servicer</span></em>,
+                                <em class="sig-param"><span class="n">server</span></em><span class="sig-paren">)</span><a
+                                    class="headerlink"
+                                    href="#etcd3ref.etcdrpc.rpc_pb2_grpc.add_MaintenanceServicer_to_server"
+                                    title="永久链接至目标">¶</a></dt>
+                            <dd></dd>
+                        </dl>
+                        <dl class="py function">
+                            <dt id="etcd3ref.etcdrpc.rpc_pb2_grpc.add_WatchServicer_to_server">
+                                <code class="sig-prename descclassname">etcd3ref.etcdrpc.rpc_pb2_grpc.</code><code
+                                    class="sig-name descname">add_WatchServicer_to_server</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">servicer</span></em>, <em class="sig-param"><span
+                                    class="n">server</span></em><span class="sig-paren">)</span><a class="headerlink"
+                                                                                                   href="#etcd3ref.etcdrpc.rpc_pb2_grpc.add_WatchServicer_to_server"
+                                                                                                   title="永久链接至目标">¶</a>
+                            </dt>
+                            <dd></dd>
+                        </dl>
+                    </div>
+                    <div class="section" id="module-etcd3ref.etcdrpc">
+                        <span id="module-contents"></span>
+                        <h2>Module contents<a class="headerlink" href="#module-etcd3ref.etcdrpc" title="永久链接至标题">¶</a>
+                        </h2>
+                    </div>
+                </div>
+
+            </article>
+            <footer>
+
+                <div class="related-pages">
+
+                    <a class="prev-page" href="etcd3ref.html">
+                        <svg>
+                            <use href="#svg-arrow-right"></use>
+                        </svg>
+                        <div class="page-info">
+                            <div class="context">
+                                <span>Previous</span>
+                            </div>
+
+                            <div class="title">etcd3ref package</div>
+
+                        </div>
+                    </a>
+                </div>
+
+                <div class="related-information">
+                    Copyright &#169; 2021, Hochikong
+                    |
+                    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+                    and
+                    <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+                    <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+                    |
+                    <a class="muted-link" href="../_sources/api/etcd3ref.etcdrpc.rst.txt"
+                       rel="nofollow">
+                        显示源代码
+                    </a>
+                </div>
+
+            </footer>
+        </div>
+        <aside class="toc-drawer">
+
+
+            <div class="toc-sticky toc-scroll">
+                <div class="toc-title-container">
+          <span class="toc-title">
+            目录
+          </span>
+                </div>
+                <div class="toc-tree-container">
+                    <div class="toc-tree">
+                        <ul>
+                            <li><a class="reference internal" href="#">etcd3ref.etcdrpc package</a>
+                                <ul>
+                                    <li><a class="reference internal" href="#submodules">Submodules</a></li>
+                                    <li><a class="reference internal" href="#module-etcd3ref.etcdrpc.auth_pb2">etcd3ref.etcdrpc.auth_pb2
+                                        module</a></li>
+                                    <li><a class="reference internal" href="#module-etcd3ref.etcdrpc.kv_pb2">etcd3ref.etcdrpc.kv_pb2
+                                        module</a></li>
+                                    <li><a class="reference internal" href="#module-etcd3ref.etcdrpc.rpc_pb2">etcd3ref.etcdrpc.rpc_pb2
+                                        module</a></li>
+                                    <li><a class="reference internal" href="#module-etcd3ref.etcdrpc.rpc_pb2_grpc">etcd3ref.etcdrpc.rpc_pb2_grpc
+                                        module</a></li>
+                                    <li><a class="reference internal" href="#module-etcd3ref.etcdrpc">Module
+                                        contents</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </aside>
+    </main>
+</div>
+</body>
+</html>

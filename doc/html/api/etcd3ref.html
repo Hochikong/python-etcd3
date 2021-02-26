@@ -1,0 +1,2180 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width,initial-scale=1" name="viewport"/>
+    <link href="../genindex.html" rel="index" title="索引"/>
+    <link href="../search.html" rel="search" title="搜索"/>
+    <link href="etcd3ref.etcdrpc.html" rel="next" title="etcd3ref.etcdrpc package"/>
+    <link href="modules.html" rel="prev" title="etcd3ref"/>
+
+    <meta content="sphinx-3.4.3, furo 2020.12.30.beta24" name="generator"/>
+    <title>etcd3ref package - Python-Etcd3 Refactor 0.1.0 文档</title>
+    <link href="../_static/styles/furo.css?digest=33d2fc4f3f180ec1ffc6524e273e21d7d58cbe49" rel="stylesheet">
+    <link href="../_static/pygments.css" rel="stylesheet">
+    <link href="../_static/pygments_dark.css" media="(prefers-color-scheme: dark)" rel="stylesheet">
+
+
+    <style>
+        :root {
+            --color-code-background: #f8f8f8;
+            --color-code-foreground: black;
+
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-code-background: #202020;
+                --color-code-foreground: #d0d0d0;
+
+            }
+        }
+
+        /* For allowing end-user-specific overrides */
+        .override-light {
+            --color-code-background: #f8f8f8;
+            --color-code-foreground: black;
+
+        }
+
+        .override-dark {
+            --color-code-background: #202020;
+            --color-code-foreground: #d0d0d0;
+
+        }
+    </style>
+    <link href="../_static/styles/furo-extensions.css?digest=26485485040e7aaf717c13fd0188a5ad2c2deb60" rel="stylesheet">
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script defer="defer" src="../_static/jquery.js"></script>
+    <script defer="defer" src="../_static/underscore.js"></script>
+    <script defer="defer" src="../_static/doctools.js"></script>
+    <script defer="defer" src="../_static/translations.js"></script>
+    <script defer src="../_static/scripts/main.js?digest=e931d09b2a40c1bb82b542effe772014573baf67"></script>
+</head>
+<body dir="">
+
+<svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="svg-toc" viewBox="0 0 24 24">
+        <title>Contents</title>
+        <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+             stroke-width="1.5" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0h24v24H0z" stroke="none"/>
+            <line x1="4" x2="20" y1="6" y2="6"/>
+            <line x1="10" x2="20" y1="12" y2="12"/>
+            <line x1="6" x2="20" y1="18" y2="18"/>
+        </svg>
+    </symbol>
+    <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg class="feather feather-menu" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+             stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+             xmlns="http://www.w3.org/2000/svg">
+            <line x1="3" x2="21" y1="12" y2="12"></line>
+            <line x1="3" x2="21" y1="6" y2="6"></line>
+            <line x1="3" x2="21" y1="18" y2="18"></line>
+        </svg>
+    </symbol>
+    <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg class="feather feather-chevron-right" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+             stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+             xmlns="http://www.w3.org/2000/svg">
+            <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+    </symbol>
+</svg>
+
+<input class="sidebar-toggle" id="__navigation" name="__navigation" type="checkbox">
+<input class="sidebar-toggle" id="__toc" name="__toc" type="checkbox">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+
+<div class="page">
+    <header class="mobile-header">
+        <div class="header-left">
+            <label class="nav-overlay-icon" for="__navigation">
+                <i class="icon">
+                    <svg>
+                        <use href="#svg-menu"></use>
+                    </svg>
+                </i>
+            </label>
+        </div>
+        <div class="header-center">
+            <a href="../index.html">
+                <div class="brand">Python-Etcd3 Refactor 0.1.0 文档</div>
+            </a>
+        </div>
+        <div class="header-right">
+            <label class="toc-overlay-icon toc-header-icon" for="__toc">
+                <i class="icon">
+                    <svg>
+                        <use href="#svg-toc"></use>
+                    </svg>
+                </i>
+            </label>
+        </div>
+    </header>
+    <aside class="sidebar-drawer">
+        <div class="sidebar-container">
+
+            <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+
+
+                <span class="sidebar-brand-text">Python-Etcd3 Refactor 0.1.0 文档</span>
+
+            </a>
+                <form action="../search.html" class="sidebar-search-container" method="get">
+                    <input class="sidebar-search" name="q" placeholder=搜索>
+                    <input name="check_keywords" type="hidden" value="yes">
+                    <input name="area" type="hidden" value="default">
+                </form>
+                <div class="sidebar-scroll">
+                    <div class="sidebar-tree">
+                        <p class="caption"><span class="caption-text">Contents:</span></p>
+                        <ul class="current">
+                            <li class="toctree-l1 current has-children"><a class="reference internal"
+                                                                           href="modules.html">etcd3ref</a><input
+                                    checked="" class="toctree-checkbox" id="toctree-checkbox-1"
+                                    name="toctree-checkbox-1" type="checkbox"/><label for="toctree-checkbox-1"><i
+                                    class="icon">
+                                <svg>
+                                    <use href="#svg-arrow-right"></use>
+                                </svg>
+                            </i></label>
+                                <ul class="current">
+                                    <li class="toctree-l2 current has-children current-page"><a
+                                            class="current reference internal" href="#">etcd3ref package</a><input
+                                            checked="" class="toctree-checkbox" id="toctree-checkbox-2"
+                                            name="toctree-checkbox-2" type="checkbox"/><label
+                                            for="toctree-checkbox-2"><i class="icon">
+                                        <svg>
+                                            <use href="#svg-arrow-right"></use>
+                                        </svg>
+                                    </i></label>
+                                        <ul>
+                                            <li class="toctree-l3"><a class="reference internal"
+                                                                      href="etcd3ref.etcdrpc.html">etcd3ref.etcdrpc
+                                                package</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </aside>
+    <main class="main">
+        <div class="content">
+            <article role="main">
+                <label class="toc-overlay-icon toc-content-icon" for="__toc">
+                    <i class="icon">
+                        <svg>
+                            <use href="#svg-toc"></use>
+                        </svg>
+                    </i>
+                </label>
+                <div class="section" id="etcd3ref-package">
+                    <h1>etcd3ref package<a class="headerlink" href="#etcd3ref-package" title="永久链接至标题">¶</a></h1>
+                    <div class="section" id="subpackages">
+                        <h2>Subpackages<a class="headerlink" href="#subpackages" title="永久链接至标题">¶</a></h2>
+                        <div class="toctree-wrapper compound">
+                            <ul>
+                                <li class="toctree-l1"><a class="reference internal" href="etcd3ref.etcdrpc.html">etcd3ref.etcdrpc
+                                    package</a>
+                                    <ul>
+                                        <li class="toctree-l2"><a class="reference internal"
+                                                                  href="etcd3ref.etcdrpc.html#submodules">Submodules</a>
+                                        </li>
+                                        <li class="toctree-l2"><a class="reference internal"
+                                                                  href="etcd3ref.etcdrpc.html#module-etcd3ref.etcdrpc.auth_pb2">etcd3ref.etcdrpc.auth_pb2
+                                            module</a></li>
+                                        <li class="toctree-l2"><a class="reference internal"
+                                                                  href="etcd3ref.etcdrpc.html#module-etcd3ref.etcdrpc.kv_pb2">etcd3ref.etcdrpc.kv_pb2
+                                            module</a></li>
+                                        <li class="toctree-l2"><a class="reference internal"
+                                                                  href="etcd3ref.etcdrpc.html#module-etcd3ref.etcdrpc.rpc_pb2">etcd3ref.etcdrpc.rpc_pb2
+                                            module</a></li>
+                                        <li class="toctree-l2"><a class="reference internal"
+                                                                  href="etcd3ref.etcdrpc.html#module-etcd3ref.etcdrpc.rpc_pb2_grpc">etcd3ref.etcdrpc.rpc_pb2_grpc
+                                            module</a></li>
+                                        <li class="toctree-l2"><a class="reference internal"
+                                                                  href="etcd3ref.etcdrpc.html#module-etcd3ref.etcdrpc">Module
+                                            contents</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="section" id="submodules">
+                        <h2>Submodules<a class="headerlink" href="#submodules" title="永久链接至标题">¶</a></h2>
+                    </div>
+                    <div class="section" id="module-etcd3ref.client">
+                        <span id="etcd3ref-client-module"></span>
+                        <h2>etcd3ref.client module<a class="headerlink" href="#module-etcd3ref.client"
+                                                     title="永久链接至标题">¶</a></h2>
+                        <dl class="py class">
+                            <dt id="etcd3ref.client.Alarm">
+                                <em class="property">class </em><code
+                                    class="sig-prename descclassname">etcd3ref.client.</code><code
+                                    class="sig-name descname">Alarm</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">alarm_type</span></em>, <em
+                                    class="sig-param"><span class="n">member_id</span></em><span
+                                    class="sig-paren">)</span><a class="headerlink" href="#etcd3ref.client.Alarm"
+                                                                 title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code>
+                            </p>
+                            </dd>
+                        </dl>
+                        <dl class="py class">
+                            <dt id="etcd3ref.client.Etcd3Client">
+                                <em class="property">class </em><code
+                                    class="sig-prename descclassname">etcd3ref.client.</code><code
+                                    class="sig-name descname">Etcd3Client</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">host</span><span class="o">=</span><span
+                                    class="default_value">'localhost'</span></em>, <em class="sig-param"><span
+                                    class="n">port</span><span class="o">=</span><span class="default_value">2379</span></em>,
+                                <em class="sig-param"><span class="n">ca_cert</span><span class="o">=</span><span
+                                        class="default_value">None</span></em>, <em class="sig-param"><span class="n">cert_key</span><span
+                                    class="o">=</span><span class="default_value">None</span></em>, <em
+                                    class="sig-param"><span class="n">cert_cert</span><span class="o">=</span><span
+                                    class="default_value">None</span></em>, <em class="sig-param"><span class="n">timeout</span><span
+                                    class="o">=</span><span class="default_value">None</span></em>, <em
+                                    class="sig-param"><span class="n">user</span><span class="o">=</span><span
+                                    class="default_value">None</span></em>, <em class="sig-param"><span class="n">password</span><span
+                                    class="o">=</span><span class="default_value">None</span></em>, <em
+                                    class="sig-param"><span class="n">grpc_options</span><span class="o">=</span><span
+                                    class="default_value">None</span></em><span class="sig-paren">)</span><a
+                                    class="headerlink" href="#etcd3ref.client.Etcd3Client" title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code>
+                            </p>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.add_member">
+                                        <code class="sig-name descname">add_member</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span class="n">urls</span></em><span
+                                            class="sig-paren">)</span><a class="headerlink"
+                                                                         href="#etcd3ref.client.Etcd3Client.add_member"
+                                                                         title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Add a member into the cluster.</p>
+                                        <dl class="field-list simple">
+                                            <dt class="field-odd">返回</dt>
+                                            <dd class="field-odd"><p>new member</p>
+                                            </dd>
+                                            <dt class="field-even">返回类型</dt>
+                                            <dd class="field-even"><p><a class="reference internal"
+                                                                         href="#etcd3ref.members.Member"
+                                                                         title="etcd3ref.members.Member"><code
+                                                    class="xref py py-class docutils literal notranslate"><span
+                                                    class="pre">Member</span></code></a></p>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.add_watch_callback">
+                                        <code class="sig-name descname">add_watch_callback</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="o">*</span><span class="n">args</span></em>, <em
+                                            class="sig-param"><span class="o">**</span><span
+                                            class="n">kwargs</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.client.Etcd3Client.add_watch_callback"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Watch a key or range of keys and call a callback on every response.</p>
+                                        <p>If timeout was declared during the client initialization and
+                                            the watch cannot be created during that time the method raises
+                                            a <code class="docutils literal notranslate"><span
+                                                    class="pre">WatchTimedOut</span></code> exception.</p>
+                                        <dl class="field-list simple">
+                                            <dt class="field-odd">参数</dt>
+                                            <dd class="field-odd">
+                                                <ul class="simple">
+                                                    <li><p><strong>key</strong> – key to watch</p></li>
+                                                    <li><p><strong>callback</strong> – callback function</p></li>
+                                                </ul>
+                                            </dd>
+                                            <dt class="field-even">返回</dt>
+                                            <dd class="field-even"><p>watch_id. Later it could be used for cancelling
+                                                watch.</p>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.add_watch_prefix_callback">
+                                        <code class="sig-name descname">add_watch_prefix_callback</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">key_prefix</span></em>, <em class="sig-param"><span class="n">callback</span></em>,
+                                        <em class="sig-param"><span class="o">**</span><span
+                                                class="n">kwargs</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink"
+                                            href="#etcd3ref.client.Etcd3Client.add_watch_prefix_callback"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Watch a prefix and call a callback on every response.</p>
+                                        <p>If timeout was declared during the client initialization and
+                                            the watch cannot be created during that time the method raises
+                                            a <code class="docutils literal notranslate"><span
+                                                    class="pre">WatchTimedOut</span></code> exception.</p>
+                                        <dl class="field-list simple">
+                                            <dt class="field-odd">参数</dt>
+                                            <dd class="field-odd">
+                                                <ul class="simple">
+                                                    <li><p><strong>key_prefix</strong> – prefix to watch</p></li>
+                                                    <li><p><strong>callback</strong> – callback function</p></li>
+                                                </ul>
+                                            </dd>
+                                            <dt class="field-even">返回</dt>
+                                            <dd class="field-even"><p>watch_id. Later it could be used for cancelling
+                                                watch.</p>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.cancel_watch">
+                                        <code class="sig-name descname">cancel_watch</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">watch_id</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.client.Etcd3Client.cancel_watch"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Stop watching a key or range of keys.</p>
+                                        <dl class="field-list simple">
+                                            <dt class="field-odd">参数</dt>
+                                            <dd class="field-odd"><p><strong>watch_id</strong> – watch_id returned by
+                                                <code class="docutils literal notranslate"><span class="pre">add_watch_callback</span></code>
+                                                method</p>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.close">
+                                        <code class="sig-name descname">close</code><span
+                                            class="sig-paren">(</span><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.client.Etcd3Client.close"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Call the GRPC channel close semantics.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.compact">
+                                        <code class="sig-name descname">compact</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">revision</span></em>, <em class="sig-param"><span class="n">physical</span><span
+                                            class="o">=</span><span class="default_value">False</span></em><span
+                                            class="sig-paren">)</span><a class="headerlink"
+                                                                         href="#etcd3ref.client.Etcd3Client.compact"
+                                                                         title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Compact the event history in etcd up to a given revision.</p>
+                                        <p>All superseded keys with a revision less than the compaction revision
+                                            will be removed.</p>
+                                        <dl class="field-list simple">
+                                            <dt class="field-odd">参数</dt>
+                                            <dd class="field-odd">
+                                                <ul class="simple">
+                                                    <li><p><strong>revision</strong> – revision for the compaction
+                                                        operation</p></li>
+                                                    <li><p><strong>physical</strong> – if set to True, the request will
+                                                        wait until the
+                                                        compaction is physically applied to the local database
+                                                        such that compacted entries are totally removed from
+                                                        the backend database</p></li>
+                                                </ul>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.create_alarm">
+                                        <code class="sig-name descname">create_alarm</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">member_id</span><span class="o">=</span><span
+                                            class="default_value">0</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.client.Etcd3Client.create_alarm"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Create an alarm.</p>
+                                        <p>If no member id is given, the alarm is activated for all the
+                                            members of the cluster. Only the <cite>no space</cite> alarm can be raised.
+                                        </p>
+                                        <dl class="field-list simple">
+                                            <dt class="field-odd">参数</dt>
+                                            <dd class="field-odd"><p><strong>member_id</strong> – The cluster member id
+                                                to create an alarm to.
+                                                If 0, the alarm is created for all the members
+                                                of the cluster.</p>
+                                            </dd>
+                                            <dt class="field-even">返回</dt>
+                                            <dd class="field-even"><p>list of <a class="reference internal"
+                                                                                 href="#etcd3ref.client.Alarm"
+                                                                                 title="etcd3ref.client.Alarm"><code
+                                                    class="xref py py-class docutils literal notranslate"><span
+                                                    class="pre">Alarm</span></code></a></p>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.defragment">
+                                        <code class="sig-name descname">defragment</code><span
+                                            class="sig-paren">(</span><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.client.Etcd3Client.defragment"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Defragment a member’s backend database to recover storage space.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.delete">
+                                        <code class="sig-name descname">delete</code><span class="sig-paren">(</span><em
+                                            class="sig-param"><span class="n">key</span></em>, <em
+                                            class="sig-param"><span class="n">prev_kv</span><span
+                                            class="o">=</span><span class="default_value">False</span></em>, <em
+                                            class="sig-param"><span class="n">return_response</span><span
+                                            class="o">=</span><span class="default_value">False</span></em><span
+                                            class="sig-paren">)</span><a class="headerlink"
+                                                                         href="#etcd3ref.client.Etcd3Client.delete"
+                                                                         title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Delete a single key in etcd.</p>
+                                        <dl class="field-list simple">
+                                            <dt class="field-odd">参数</dt>
+                                            <dd class="field-odd">
+                                                <ul class="simple">
+                                                    <li><p><strong>key</strong> – key in etcd to delete</p></li>
+                                                    <li><p><strong>prev_kv</strong> (<em>bool</em>) – return the deleted
+                                                        key-value pair</p></li>
+                                                    <li><p><strong>return_response</strong> (<em>bool</em>) – return the
+                                                        full response</p></li>
+                                                </ul>
+                                            </dd>
+                                            <dt class="field-even">返回</dt>
+                                            <dd class="field-even"><p>True if the key has been deleted when
+                                                <code class="docutils literal notranslate"><span class="pre">return_response</span></code>
+                                                is False and a response containing
+                                                a header, the number of deleted keys and prev_kvs when
+                                                <code class="docutils literal notranslate"><span class="pre">return_response</span></code>
+                                                is True</p>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.delete_prefix">
+                                        <code class="sig-name descname">delete_prefix</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">prefix</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.client.Etcd3Client.delete_prefix"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Delete a range of keys with a prefix in etcd.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.disarm_alarm">
+                                        <code class="sig-name descname">disarm_alarm</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">member_id</span><span class="o">=</span><span
+                                            class="default_value">0</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.client.Etcd3Client.disarm_alarm"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Cancel an alarm.</p>
+                                        <dl class="field-list simple">
+                                            <dt class="field-odd">参数</dt>
+                                            <dd class="field-odd"><p><strong>member_id</strong> – The cluster member id
+                                                to cancel an alarm.
+                                                If 0, the alarm is canceled for all the members
+                                                of the cluster.</p>
+                                            </dd>
+                                            <dt class="field-even">返回</dt>
+                                            <dd class="field-even"><p>List of <a class="reference internal"
+                                                                                 href="#etcd3ref.client.Alarm"
+                                                                                 title="etcd3ref.client.Alarm"><code
+                                                    class="xref py py-class docutils literal notranslate"><span
+                                                    class="pre">Alarm</span></code></a></p>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.get">
+                                        <code class="sig-name descname">get</code><span class="sig-paren">(</span><em
+                                            class="sig-param"><span class="n">key</span></em>, <em
+                                            class="sig-param"><span class="o">**</span><span
+                                            class="n">kwargs</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.client.Etcd3Client.get"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Get the value of a key from etcd.</p>
+                                        <p>example usage:</p>
+                                        <div class="highlight-python notranslate">
+                                            <div class="highlight"><pre><span></span><span
+                                                    class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span
+                                                    class="nn">etcd3ref</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">etcd</span> <span class="o">=</span> <span
+                                                        class="n">etcd3ref</span><span class="o">.</span><span
+                                                        class="n">client</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">etcd</span><span class="o">.</span><span class="n">get</span><span
+                                                        class="p">(</span><span class="s1">'/thing/key'</span><span
+                                                        class="p">)</span>
+<span class="go">'hello world'</span>
+</pre>
+                                            </div>
+                                        </div>
+                                        <dl class="field-list simple">
+                                            <dt class="field-odd">参数</dt>
+                                            <dd class="field-odd">
+                                                <ul class="simple">
+                                                    <li><p><strong>key</strong> – key in etcd to get</p></li>
+                                                    <li><p><strong>serializable</strong> – whether to allow serializable
+                                                        reads. This can
+                                                        result in stale reads</p></li>
+                                                </ul>
+                                            </dd>
+                                            <dt class="field-even">返回</dt>
+                                            <dd class="field-even"><p>value of key and metadata</p>
+                                            </dd>
+                                            <dt class="field-odd">返回类型</dt>
+                                            <dd class="field-odd"><p>bytes, <code
+                                                    class="docutils literal notranslate"><span
+                                                    class="pre">KVMetadata</span></code></p>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.get_all">
+                                        <code class="sig-name descname">get_all</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="o">**</span><span class="n">kwargs</span></em><span
+                                            class="sig-paren">)</span><a class="headerlink"
+                                                                         href="#etcd3ref.client.Etcd3Client.get_all"
+                                                                         title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Get all keys currently stored in etcd.</p>
+                                        <dl class="field-list simple">
+                                            <dt class="field-odd">参数</dt>
+                                            <dd class="field-odd"><p><strong>keys_only</strong> – if True, retrieve only
+                                                the keys, not the values</p>
+                                            </dd>
+                                            <dt class="field-even">返回</dt>
+                                            <dd class="field-even"><p>sequence of (value, metadata) tuples</p>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.get_lease_info">
+                                        <code class="sig-name descname">get_lease_info</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">lease_id</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.client.Etcd3Client.get_lease_info"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd></dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.get_prefix">
+                                        <code class="sig-name descname">get_prefix</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">key_prefix</span></em>, <em class="sig-param"><span
+                                            class="o">**</span><span class="n">kwargs</span></em><span
+                                            class="sig-paren">)</span><a class="headerlink"
+                                                                         href="#etcd3ref.client.Etcd3Client.get_prefix"
+                                                                         title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Get a range of keys with a prefix.</p>
+                                        <dl class="field-list simple">
+                                            <dt class="field-odd">参数</dt>
+                                            <dd class="field-odd">
+                                                <ul class="simple">
+                                                    <li><p><strong>key_prefix</strong> – first key in range</p></li>
+                                                    <li><p><strong>keys_only</strong> – if True, retrieve only the keys,
+                                                        not the values</p></li>
+                                                </ul>
+                                            </dd>
+                                            <dt class="field-even">返回</dt>
+                                            <dd class="field-even"><p>sequence of (value, metadata) tuples</p>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.get_range">
+                                        <code class="sig-name descname">get_range</code><span class="sig-paren">(</span><em
+                                            class="sig-param"><span class="n">range_start</span></em>, <em
+                                            class="sig-param"><span class="n">range_end</span></em>, <em
+                                            class="sig-param"><span class="o">**</span><span
+                                            class="n">kwargs</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.client.Etcd3Client.get_range"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Get a range of keys.</p>
+                                        <dl class="field-list simple">
+                                            <dt class="field-odd">参数</dt>
+                                            <dd class="field-odd">
+                                                <ul class="simple">
+                                                    <li><p><strong>range_start</strong> – first key in range</p></li>
+                                                    <li><p><strong>range_end</strong> – last key in range</p></li>
+                                                </ul>
+                                            </dd>
+                                            <dt class="field-even">返回</dt>
+                                            <dd class="field-even"><p>sequence of (value, metadata) tuples</p>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.hash">
+                                        <code class="sig-name descname">hash</code><span class="sig-paren">(</span><span
+                                            class="sig-paren">)</span><a class="headerlink"
+                                                                         href="#etcd3ref.client.Etcd3Client.hash"
+                                                                         title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Return the hash of the local KV state.</p>
+                                        <dl class="field-list simple">
+                                            <dt class="field-odd">返回</dt>
+                                            <dd class="field-odd"><p>kv state hash</p>
+                                            </dd>
+                                            <dt class="field-even">返回类型</dt>
+                                            <dd class="field-even"><p>int</p>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.lease">
+                                        <code class="sig-name descname">lease</code><span class="sig-paren">(</span><em
+                                            class="sig-param"><span class="n">ttl</span></em>, <em
+                                            class="sig-param"><span class="n">lease_id</span><span
+                                            class="o">=</span><span class="default_value">None</span></em><span
+                                            class="sig-paren">)</span><a class="headerlink"
+                                                                         href="#etcd3ref.client.Etcd3Client.lease"
+                                                                         title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Create a new lease.</p>
+                                        <p>All keys attached to this lease will be expired and deleted if the
+                                            lease expires. A lease can be sent keep alive messages to refresh the
+                                            ttl.</p>
+                                        <dl class="field-list simple">
+                                            <dt class="field-odd">参数</dt>
+                                            <dd class="field-odd">
+                                                <ul class="simple">
+                                                    <li><p><strong>ttl</strong> – Requested time to live</p></li>
+                                                    <li><p><strong>lease_id</strong> – Requested ID for the lease</p>
+                                                    </li>
+                                                </ul>
+                                            </dd>
+                                            <dt class="field-even">返回</dt>
+                                            <dd class="field-even"><p>new lease</p>
+                                            </dd>
+                                            <dt class="field-odd">返回类型</dt>
+                                            <dd class="field-odd"><p><a class="reference internal"
+                                                                        href="#etcd3ref.leases.Lease"
+                                                                        title="etcd3ref.leases.Lease"><code
+                                                    class="xref py py-class docutils literal notranslate"><span
+                                                    class="pre">Lease</span></code></a></p>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.list_alarms">
+                                        <code class="sig-name descname">list_alarms</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">member_id</span><span class="o">=</span><span
+                                            class="default_value">0</span></em>, <em class="sig-param"><span class="n">alarm_type</span><span
+                                            class="o">=</span><span class="default_value">'none'</span></em><span
+                                            class="sig-paren">)</span><a class="headerlink"
+                                                                         href="#etcd3ref.client.Etcd3Client.list_alarms"
+                                                                         title="永久链接至目标">¶</a></dt>
+                                    <dd><p>List the activated alarms.</p>
+                                        <dl class="field-list simple">
+                                            <dt class="field-odd">参数</dt>
+                                            <dd class="field-odd">
+                                                <ul class="simple">
+                                                    <li><p><strong>member_id</strong> – </p></li>
+                                                    <li><p><strong>alarm_type</strong> – The cluster member id to create
+                                                        an alarm to.
+                                                        If 0, the alarm is created for all the members
+                                                        of the cluster.</p></li>
+                                                </ul>
+                                            </dd>
+                                            <dt class="field-even">返回</dt>
+                                            <dd class="field-even"><p>sequence of <a class="reference internal"
+                                                                                     href="#etcd3ref.client.Alarm"
+                                                                                     title="etcd3ref.client.Alarm"><code
+                                                    class="xref py py-class docutils literal notranslate"><span
+                                                    class="pre">Alarm</span></code></a></p>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.lock">
+                                        <code class="sig-name descname">lock</code><span class="sig-paren">(</span><em
+                                            class="sig-param"><span class="n">name</span></em>, <em
+                                            class="sig-param"><span class="n">ttl</span><span class="o">=</span><span
+                                            class="default_value">60</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.client.Etcd3Client.lock" title="永久链接至目标">¶</a>
+                                    </dt>
+                                    <dd><p>Create a new lock.</p>
+                                        <dl class="field-list simple">
+                                            <dt class="field-odd">参数</dt>
+                                            <dd class="field-odd">
+                                                <ul class="simple">
+                                                    <li><p><strong>name</strong> (<em>string</em><em>
+                                                        or </em><em>bytes</em>) – name of the lock</p></li>
+                                                    <li><p><strong>ttl</strong> (<em>int</em>) – length of time for the
+                                                        lock to live for in seconds. The
+                                                        lock will be released after this time elapses, unless
+                                                        refreshed</p></li>
+                                                </ul>
+                                            </dd>
+                                            <dt class="field-even">返回</dt>
+                                            <dd class="field-even"><p>new lock</p>
+                                            </dd>
+                                            <dt class="field-odd">返回类型</dt>
+                                            <dd class="field-odd"><p><a class="reference internal"
+                                                                        href="#etcd3ref.locks.Lock"
+                                                                        title="etcd3ref.locks.Lock"><code
+                                                    class="xref py py-class docutils literal notranslate"><span
+                                                    class="pre">Lock</span></code></a></p>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.members">
+                                        <em class="property">property </em><code
+                                            class="sig-name descname">members</code><a class="headerlink"
+                                                                                       href="#etcd3ref.client.Etcd3Client.members"
+                                                                                       title="永久链接至目标">¶</a></dt>
+                                    <dd><p>List of all members associated with the cluster.</p>
+                                        <dl class="field-list simple">
+                                            <dt class="field-odd">Type</dt>
+                                            <dd class="field-odd"><p>sequence of <a class="reference internal"
+                                                                                    href="#etcd3ref.members.Member"
+                                                                                    title="etcd3ref.members.Member"><code
+                                                    class="xref py py-class docutils literal notranslate"><span
+                                                    class="pre">Member</span></code></a></p>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.put">
+                                        <code class="sig-name descname">put</code><span class="sig-paren">(</span><em
+                                            class="sig-param"><span class="n">key</span></em>, <em
+                                            class="sig-param"><span class="n">value</span></em>, <em
+                                            class="sig-param"><span class="n">lease</span><span class="o">=</span><span
+                                            class="default_value">None</span></em>, <em class="sig-param"><span
+                                            class="n">prev_kv</span><span class="o">=</span><span class="default_value">False</span></em><span
+                                            class="sig-paren">)</span><a class="headerlink"
+                                                                         href="#etcd3ref.client.Etcd3Client.put"
+                                                                         title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Save a value to etcd.</p>
+                                        <p>Example usage:</p>
+                                        <div class="highlight-python notranslate">
+                                            <div class="highlight"><pre><span></span><span
+                                                    class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span
+                                                    class="nn">etcd3ref</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">etcd</span> <span class="o">=</span> <span
+                                                        class="n">etcd3ref</span><span class="o">.</span><span
+                                                        class="n">client</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">etcd</span><span class="o">.</span><span class="n">put</span><span
+                                                        class="p">(</span><span class="s1">'/thing/key'</span><span
+                                                        class="p">,</span> <span class="s1">'hello world'</span><span
+                                                        class="p">)</span>
+</pre>
+                                            </div>
+                                        </div>
+                                        <dl class="field-list simple">
+                                            <dt class="field-odd">参数</dt>
+                                            <dd class="field-odd">
+                                                <ul class="simple">
+                                                    <li><p><strong>key</strong> – key in etcd to set</p></li>
+                                                    <li><p><strong>value</strong> (<em>bytes</em>) – value to set key to
+                                                    </p></li>
+                                                    <li><p><strong>lease</strong> (either <a class="reference internal"
+                                                                                             href="#etcd3ref.leases.Lease"
+                                                                                             title="etcd3ref.leases.Lease"><code
+                                                            class="xref py py-class docutils literal notranslate"><span
+                                                            class="pre">Lease</span></code></a>, or int (ID of lease)) –
+                                                        Lease to associate with this key.</p></li>
+                                                    <li><p><strong>prev_kv</strong> (<em>bool</em>) – return the
+                                                        previous key-value pair</p></li>
+                                                </ul>
+                                            </dd>
+                                            <dt class="field-even">返回</dt>
+                                            <dd class="field-even"><p>a response containing a header and the prev_kv</p>
+                                            </dd>
+                                            <dt class="field-odd">返回类型</dt>
+                                            <dd class="field-odd"><p><code
+                                                    class="xref py py-class docutils literal notranslate"><span
+                                                    class="pre">rpc_pb2.PutResponse</span></code></p>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.put_if_not_exists">
+                                        <code class="sig-name descname">put_if_not_exists</code><span class="sig-paren">(</span><em
+                                            class="sig-param"><span class="n">key</span></em>, <em
+                                            class="sig-param"><span class="n">value</span></em>, <em
+                                            class="sig-param"><span class="n">lease</span><span class="o">=</span><span
+                                            class="default_value">None</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.client.Etcd3Client.put_if_not_exists"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Atomically puts a value only if the key previously had no value.</p>
+                                        <p>This is the etcdv3 equivalent to setting a key with the etcdv2
+                                            parameter prevExist=false.</p>
+                                        <dl class="field-list simple">
+                                            <dt class="field-odd">参数</dt>
+                                            <dd class="field-odd">
+                                                <ul class="simple">
+                                                    <li><p><strong>key</strong> – key in etcd to put</p></li>
+                                                    <li><p><strong>value</strong> (<em>bytes</em>) – value to be written
+                                                        to key</p></li>
+                                                    <li><p><strong>lease</strong> (either <a class="reference internal"
+                                                                                             href="#etcd3ref.leases.Lease"
+                                                                                             title="etcd3ref.leases.Lease"><code
+                                                            class="xref py py-class docutils literal notranslate"><span
+                                                            class="pre">Lease</span></code></a>, or int (ID of lease)) –
+                                                        Lease to associate with this key.</p></li>
+                                                </ul>
+                                            </dd>
+                                            <dt class="field-even">返回</dt>
+                                            <dd class="field-even"><p>state of transaction, <code
+                                                    class="docutils literal notranslate"><span
+                                                    class="pre">True</span></code> if the put was successful,
+                                                <code class="docutils literal notranslate"><span
+                                                        class="pre">False</span></code> otherwise</p>
+                                            </dd>
+                                            <dt class="field-odd">返回类型</dt>
+                                            <dd class="field-odd"><p>bool</p>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.reconnect">
+                                        <code class="sig-name descname">reconnect</code><span class="sig-paren">(</span><span
+                                            class="sig-paren">)</span><a class="headerlink"
+                                                                         href="#etcd3ref.client.Etcd3Client.reconnect"
+                                                                         title="永久链接至目标">¶</a></dt>
+                                    <dd><p>重新连接</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.refresh_lease">
+                                        <code class="sig-name descname">refresh_lease</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">lease_id</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.client.Etcd3Client.refresh_lease"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd></dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.remove_member">
+                                        <code class="sig-name descname">remove_member</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">member_id</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.client.Etcd3Client.remove_member"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Remove an existing member from the cluster.</p>
+                                        <dl class="field-list simple">
+                                            <dt class="field-odd">参数</dt>
+                                            <dd class="field-odd"><p><strong>member_id</strong> – ID of the member to
+                                                remove</p>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.replace">
+                                        <code class="sig-name descname">replace</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">key</span></em>, <em class="sig-param"><span class="n">initial_value</span></em>,
+                                        <em class="sig-param"><span class="n">new_value</span></em><span
+                                            class="sig-paren">)</span><a class="headerlink"
+                                                                         href="#etcd3ref.client.Etcd3Client.replace"
+                                                                         title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Atomically replace the value of a key with a new value.</p>
+                                        <p>This compares the current value of a key, then replaces it with a new
+                                            value if it is equal to a specified value. This operation takes place
+                                            in a transaction.</p>
+                                        <dl class="field-list simple">
+                                            <dt class="field-odd">参数</dt>
+                                            <dd class="field-odd">
+                                                <ul class="simple">
+                                                    <li><p><strong>key</strong> – key in etcd to replace</p></li>
+                                                    <li><p><strong>initial_value</strong> (<em>bytes</em>) – old value
+                                                        to replace</p></li>
+                                                    <li><p><strong>new_value</strong> (<em>bytes</em>) – new value of
+                                                        the key</p></li>
+                                                </ul>
+                                            </dd>
+                                            <dt class="field-even">返回</dt>
+                                            <dd class="field-even"><p>status of transaction, <code
+                                                    class="docutils literal notranslate"><span
+                                                    class="pre">True</span></code> if the replace was
+                                                successful, <code class="docutils literal notranslate"><span
+                                                        class="pre">False</span></code> otherwise</p>
+                                            </dd>
+                                            <dt class="field-odd">返回类型</dt>
+                                            <dd class="field-odd"><p>bool</p>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.revoke_lease">
+                                        <code class="sig-name descname">revoke_lease</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">lease_id</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.client.Etcd3Client.revoke_lease"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Revoke a lease.</p>
+                                        <dl class="field-list simple">
+                                            <dt class="field-odd">参数</dt>
+                                            <dd class="field-odd"><p><strong>lease_id</strong> – ID of the lease to
+                                                revoke.</p>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.snapshot">
+                                        <code class="sig-name descname">snapshot</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">file_obj</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.client.Etcd3Client.snapshot"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Take a snapshot of the database.</p>
+                                        <dl class="field-list simple">
+                                            <dt class="field-odd">参数</dt>
+                                            <dd class="field-odd"><p><strong>file_obj</strong> – A file-like object to
+                                                write the database contents in.</p>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.status">
+                                        <code class="sig-name descname">status</code><span
+                                            class="sig-paren">(</span><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.client.Etcd3Client.status"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Get the status of the responding member.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.transaction">
+                                        <code class="sig-name descname">transaction</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">compare</span></em>, <em class="sig-param"><span
+                                            class="n">success</span><span class="o">=</span><span class="default_value">None</span></em>,
+                                        <em class="sig-param"><span class="n">failure</span><span
+                                                class="o">=</span><span class="default_value">None</span></em><span
+                                            class="sig-paren">)</span><a class="headerlink"
+                                                                         href="#etcd3ref.client.Etcd3Client.transaction"
+                                                                         title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Perform a transaction.</p>
+                                        <p>Example usage:</p>
+                                        <div class="highlight-python notranslate">
+                                            <div class="highlight"><pre><span></span><span class="n">etcd</span><span
+                                                    class="o">.</span><span class="n">transaction</span><span class="p">(</span>
+    <span class="n">compare</span><span class="o">=</span><span class="p">[</span>
+        <span class="n">etcd</span><span class="o">.</span><span class="n">transactions</span><span
+                                                        class="o">.</span><span class="n">value</span><span
+                                                        class="p">(</span><span class="s1">'/doot/testing'</span><span
+                                                        class="p">)</span> <span class="o">==</span> <span class="s1">'doot'</span><span
+                                                        class="p">,</span>
+        <span class="n">etcd</span><span class="o">.</span><span class="n">transactions</span><span
+                                                        class="o">.</span><span class="n">version</span><span class="p">(</span><span
+                                                        class="s1">'/doot/testing'</span><span class="p">)</span> <span
+                                                        class="o">&gt;</span> <span class="mi">0</span><span
+                                                        class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">success</span><span class="o">=</span><span class="p">[</span>
+        <span class="n">etcd</span><span class="o">.</span><span class="n">transactions</span><span
+                                                        class="o">.</span><span class="n">put</span><span
+                                                        class="p">(</span><span class="s1">'/doot/testing'</span><span
+                                                        class="p">,</span> <span class="s1">'success'</span><span
+                                                        class="p">),</span>
+    <span class="p">],</span>
+    <span class="n">failure</span><span class="o">=</span><span class="p">[</span>
+        <span class="n">etcd</span><span class="o">.</span><span class="n">transactions</span><span
+                                                        class="o">.</span><span class="n">put</span><span
+                                                        class="p">(</span><span class="s1">'/doot/testing'</span><span
+                                                        class="p">,</span> <span class="s1">'failure'</span><span
+                                                        class="p">),</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+</pre>
+                                            </div>
+                                        </div>
+                                        <dl class="field-list simple">
+                                            <dt class="field-odd">参数</dt>
+                                            <dd class="field-odd">
+                                                <ul class="simple">
+                                                    <li><p><strong>compare</strong> – A list of comparisons to make</p>
+                                                    </li>
+                                                    <li><p><strong>success</strong> – A list of operations to perform if
+                                                        all the comparisons
+                                                        are true</p></li>
+                                                    <li><p><strong>failure</strong> – A list of operations to perform if
+                                                        any of the
+                                                        comparisons are false</p></li>
+                                                </ul>
+                                            </dd>
+                                            <dt class="field-even">返回</dt>
+                                            <dd class="field-even"><p>A tuple of (operation status, responses)</p>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.update_member">
+                                        <code class="sig-name descname">update_member</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">member_id</span></em>, <em class="sig-param"><span class="n">peer_urls</span></em><span
+                                            class="sig-paren">)</span><a class="headerlink"
+                                                                         href="#etcd3ref.client.Etcd3Client.update_member"
+                                                                         title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Update the configuration of an existing member in the cluster.</p>
+                                        <dl class="field-list simple">
+                                            <dt class="field-odd">参数</dt>
+                                            <dd class="field-odd">
+                                                <ul class="simple">
+                                                    <li><p><strong>member_id</strong> – ID of the member to update</p>
+                                                    </li>
+                                                    <li><p><strong>peer_urls</strong> – new list of peer urls the member
+                                                        will use to
+                                                        communicate with the cluster</p></li>
+                                                </ul>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.watch">
+                                        <code class="sig-name descname">watch</code><span class="sig-paren">(</span><em
+                                            class="sig-param"><span class="n">key</span></em>, <em
+                                            class="sig-param"><span class="o">**</span><span
+                                            class="n">kwargs</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.client.Etcd3Client.watch"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Watch a key.</p>
+                                        <p>Example usage:</p>
+                                        <div class="highlight-python notranslate">
+                                            <div class="highlight"><pre><span></span><span
+                                                    class="n">events_iterator</span><span class="p">,</span> <span
+                                                    class="n">cancel</span> <span class="o">=</span> <span class="n">etcd</span><span
+                                                    class="o">.</span><span class="n">watch</span><span
+                                                    class="p">(</span><span class="s1">'/doot/key'</span><span
+                                                    class="p">)</span>
+<span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span
+                                                        class="n">events_iterator</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+</pre>
+                                            </div>
+                                        </div>
+                                        <dl class="field-list simple">
+                                            <dt class="field-odd">参数</dt>
+                                            <dd class="field-odd"><p><strong>key</strong> – key to watch</p>
+                                            </dd>
+                                            <dt class="field-even">返回</dt>
+                                            <dd class="field-even"><p>tuple of <code
+                                                    class="docutils literal notranslate"><span class="pre">events_iterator</span></code>
+                                                and <code class="docutils literal notranslate"><span
+                                                        class="pre">cancel</span></code>.
+                                                Use <code class="docutils literal notranslate"><span class="pre">events_iterator</span></code>
+                                                to get the events of key changes
+                                                and <code class="docutils literal notranslate"><span
+                                                        class="pre">cancel</span></code> to cancel the watch request.
+                                            </p>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.watch_once">
+                                        <code class="sig-name descname">watch_once</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">key</span></em>, <em class="sig-param"><span
+                                            class="n">timeout</span><span class="o">=</span><span class="default_value">None</span></em>,
+                                        <em class="sig-param"><span class="o">**</span><span
+                                                class="n">kwargs</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.client.Etcd3Client.watch_once"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Watch a key and stop after the first event.</p>
+                                        <p>If the timeout was specified and event didn’t arrive method
+                                            will raise <code class="docutils literal notranslate"><span class="pre">WatchTimedOut</span></code>
+                                            exception.</p>
+                                        <dl class="field-list simple">
+                                            <dt class="field-odd">参数</dt>
+                                            <dd class="field-odd">
+                                                <ul class="simple">
+                                                    <li><p><strong>key</strong> – key to watch</p></li>
+                                                    <li><p><strong>timeout</strong> – (optional) timeout in seconds.</p>
+                                                    </li>
+                                                </ul>
+                                            </dd>
+                                            <dt class="field-even">返回</dt>
+                                            <dd class="field-even"><p><code class="docutils literal notranslate"><span
+                                                    class="pre">Event</span></code></p>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.watch_once_response">
+                                        <code class="sig-name descname">watch_once_response</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">key</span></em>, <em class="sig-param"><span
+                                            class="n">timeout</span><span class="o">=</span><span class="default_value">None</span></em>,
+                                        <em class="sig-param"><span class="o">**</span><span
+                                                class="n">kwargs</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.client.Etcd3Client.watch_once_response"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Watch a key and stop after the first response.</p>
+                                        <p>If the timeout was specified and response didn’t arrive method
+                                            will raise <code class="docutils literal notranslate"><span class="pre">WatchTimedOut</span></code>
+                                            exception.</p>
+                                        <dl class="field-list simple">
+                                            <dt class="field-odd">参数</dt>
+                                            <dd class="field-odd">
+                                                <ul class="simple">
+                                                    <li><p><strong>key</strong> – key to watch</p></li>
+                                                    <li><p><strong>timeout</strong> – (optional) timeout in seconds.</p>
+                                                    </li>
+                                                </ul>
+                                            </dd>
+                                            <dt class="field-even">返回</dt>
+                                            <dd class="field-even"><p><code class="docutils literal notranslate"><span
+                                                    class="pre">WatchResponse</span></code></p>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.watch_prefix">
+                                        <code class="sig-name descname">watch_prefix</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">key_prefix</span></em>, <em class="sig-param"><span
+                                            class="o">**</span><span class="n">kwargs</span></em><span
+                                            class="sig-paren">)</span><a class="headerlink"
+                                                                         href="#etcd3ref.client.Etcd3Client.watch_prefix"
+                                                                         title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Watch a range of keys with a prefix.</p>
+                                        <dl class="field-list simple">
+                                            <dt class="field-odd">参数</dt>
+                                            <dd class="field-odd"><p><strong>key_prefix</strong> – prefix to watch</p>
+                                            </dd>
+                                            <dt class="field-even">返回</dt>
+                                            <dd class="field-even"><p>tuple of <code
+                                                    class="docutils literal notranslate"><span class="pre">events_iterator</span></code>
+                                                and <code class="docutils literal notranslate"><span
+                                                        class="pre">cancel</span></code>.</p>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.watch_prefix_once">
+                                        <code class="sig-name descname">watch_prefix_once</code><span class="sig-paren">(</span><em
+                                            class="sig-param"><span class="n">key_prefix</span></em>, <em
+                                            class="sig-param"><span class="n">timeout</span><span
+                                            class="o">=</span><span class="default_value">None</span></em>, <em
+                                            class="sig-param"><span class="o">**</span><span
+                                            class="n">kwargs</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.client.Etcd3Client.watch_prefix_once"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Watch a range of keys with a prefix and stop after the first event.</p>
+                                        <p>If the timeout was specified and event didn’t arrive method
+                                            will raise <code class="docutils literal notranslate"><span class="pre">WatchTimedOut</span></code>
+                                            exception.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.watch_prefix_once_response">
+                                        <code class="sig-name descname">watch_prefix_once_response</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">key_prefix</span></em>, <em class="sig-param"><span class="n">timeout</span><span
+                                            class="o">=</span><span class="default_value">None</span></em>, <em
+                                            class="sig-param"><span class="o">**</span><span
+                                            class="n">kwargs</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink"
+                                            href="#etcd3ref.client.Etcd3Client.watch_prefix_once_response"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Watch a range of keys with a prefix and stop after the first response.</p>
+                                        <p>If the timeout was specified and response didn’t arrive method
+                                            will raise <code class="docutils literal notranslate"><span class="pre">WatchTimedOut</span></code>
+                                            exception.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.watch_prefix_response">
+                                        <code class="sig-name descname">watch_prefix_response</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">key_prefix</span></em>, <em class="sig-param"><span
+                                            class="o">**</span><span class="n">kwargs</span></em><span
+                                            class="sig-paren">)</span><a class="headerlink"
+                                                                         href="#etcd3ref.client.Etcd3Client.watch_prefix_response"
+                                                                         title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Watch a range of keys with a prefix.</p>
+                                        <dl class="field-list simple">
+                                            <dt class="field-odd">参数</dt>
+                                            <dd class="field-odd"><p><strong>key_prefix</strong> – prefix to watch</p>
+                                            </dd>
+                                            <dt class="field-even">返回</dt>
+                                            <dd class="field-even"><p>tuple of <code
+                                                    class="docutils literal notranslate"><span class="pre">responses_iterator</span></code>
+                                                and <code class="docutils literal notranslate"><span
+                                                        class="pre">cancel</span></code>.</p>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.client.Etcd3Client.watch_response">
+                                        <code class="sig-name descname">watch_response</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">key</span></em>, <em class="sig-param"><span
+                                            class="o">**</span><span class="n">kwargs</span></em><span
+                                            class="sig-paren">)</span><a class="headerlink"
+                                                                         href="#etcd3ref.client.Etcd3Client.watch_response"
+                                                                         title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Watch a key.</p>
+                                        <p>Example usage:</p>
+                                        <div class="highlight-python notranslate">
+                                            <div class="highlight"><pre><span></span><span
+                                                    class="n">responses_iterator</span><span class="p">,</span> <span
+                                                    class="n">cancel</span> <span class="o">=</span> <span class="n">etcd</span><span
+                                                    class="o">.</span><span class="n">watch_response</span><span
+                                                    class="p">(</span><span class="s1">'/doot/key'</span><span
+                                                    class="p">)</span>
+<span class="k">for</span> <span class="n">response</span> <span class="ow">in</span> <span
+                                                        class="n">responses_iterator</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre>
+                                            </div>
+                                        </div>
+                                        <dl class="field-list simple">
+                                            <dt class="field-odd">参数</dt>
+                                            <dd class="field-odd"><p><strong>key</strong> – key to watch</p>
+                                            </dd>
+                                            <dt class="field-even">返回</dt>
+                                            <dd class="field-even"><p>tuple of <code
+                                                    class="docutils literal notranslate"><span class="pre">responses_iterator</span></code>
+                                                and <code class="docutils literal notranslate"><span
+                                                        class="pre">cancel</span></code>.
+                                                Use <code class="docutils literal notranslate"><span class="pre">responses_iterator</span></code>
+                                                to get the watch responses,
+                                                each of which contains a header and a list of events.
+                                                Use <code class="docutils literal notranslate"><span
+                                                        class="pre">cancel</span></code> to cancel the watch request.
+                                            </p>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                            </dd>
+                        </dl>
+                        <dl class="py class">
+                            <dt id="etcd3ref.client.EtcdTokenCallCredentials">
+                                <em class="property">class </em><code
+                                    class="sig-prename descclassname">etcd3ref.client.</code><code
+                                    class="sig-name descname">EtcdTokenCallCredentials</code><span
+                                    class="sig-paren">(</span><em class="sig-param"><span class="n">access_token</span></em><span
+                                    class="sig-paren">)</span><a class="headerlink"
+                                                                 href="#etcd3ref.client.EtcdTokenCallCredentials"
+                                                                 title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">grpc.AuthMetadataPlugin</span></code>
+                            </p>
+                                <p>Metadata wrapper for raw access token credentials.</p>
+                            </dd>
+                        </dl>
+                        <dl class="py class">
+                            <dt id="etcd3ref.client.KVMetadata">
+                                <em class="property">class </em><code
+                                    class="sig-prename descclassname">etcd3ref.client.</code><code
+                                    class="sig-name descname">KVMetadata</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">keyvalue</span></em>, <em class="sig-param"><span
+                                    class="n">header</span></em><span class="sig-paren">)</span><a class="headerlink"
+                                                                                                   href="#etcd3ref.client.KVMetadata"
+                                                                                                   title="永久链接至目标">¶</a>
+                            </dt>
+                            <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code>
+                            </p>
+                            </dd>
+                        </dl>
+                        <dl class="py class">
+                            <dt id="etcd3ref.client.Status">
+                                <em class="property">class </em><code
+                                    class="sig-prename descclassname">etcd3ref.client.</code><code
+                                    class="sig-name descname">Status</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">version</span></em>, <em class="sig-param"><span
+                                    class="n">db_size</span></em>, <em class="sig-param"><span
+                                    class="n">leader</span></em>, <em class="sig-param"><span
+                                    class="n">raft_index</span></em>, <em class="sig-param"><span
+                                    class="n">raft_term</span></em><span class="sig-paren">)</span><a class="headerlink"
+                                                                                                      href="#etcd3ref.client.Status"
+                                                                                                      title="永久链接至目标">¶</a>
+                            </dt>
+                            <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code>
+                            </p>
+                            </dd>
+                        </dl>
+                        <dl class="py class">
+                            <dt id="etcd3ref.client.Transactions">
+                                <em class="property">class </em><code
+                                    class="sig-prename descclassname">etcd3ref.client.</code><code
+                                    class="sig-name descname">Transactions</code><a class="headerlink"
+                                                                                    href="#etcd3ref.client.Transactions"
+                                                                                    title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code>
+                            </p>
+                            </dd>
+                        </dl>
+                        <dl class="py function">
+                            <dt id="etcd3ref.client.client">
+                                <code class="sig-prename descclassname">etcd3ref.client.</code><code
+                                    class="sig-name descname">client</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">host</span><span class="o">=</span><span
+                                    class="default_value">'localhost'</span></em>, <em class="sig-param"><span
+                                    class="n">port</span><span class="o">=</span><span class="default_value">2379</span></em>,
+                                <em class="sig-param"><span class="n">ca_cert</span><span class="o">=</span><span
+                                        class="default_value">None</span></em>, <em class="sig-param"><span class="n">cert_key</span><span
+                                    class="o">=</span><span class="default_value">None</span></em>, <em
+                                    class="sig-param"><span class="n">cert_cert</span><span class="o">=</span><span
+                                    class="default_value">None</span></em>, <em class="sig-param"><span class="n">timeout</span><span
+                                    class="o">=</span><span class="default_value">None</span></em>, <em
+                                    class="sig-param"><span class="n">user</span><span class="o">=</span><span
+                                    class="default_value">None</span></em>, <em class="sig-param"><span class="n">password</span><span
+                                    class="o">=</span><span class="default_value">None</span></em>, <em
+                                    class="sig-param"><span class="n">grpc_options</span><span class="o">=</span><span
+                                    class="default_value">None</span></em><span class="sig-paren">)</span><a
+                                    class="headerlink" href="#etcd3ref.client.client" title="永久链接至目标">¶</a></dt>
+                            <dd><p>Return an instance of an Etcd3Client.</p>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="section" id="module-etcd3ref.events">
+                        <span id="etcd3ref-events-module"></span>
+                        <h2>etcd3ref.events module<a class="headerlink" href="#module-etcd3ref.events"
+                                                     title="永久链接至标题">¶</a></h2>
+                        <dl class="py class">
+                            <dt id="etcd3ref.events.DeleteEvent">
+                                <em class="property">class </em><code
+                                    class="sig-prename descclassname">etcd3ref.events.</code><code
+                                    class="sig-name descname">DeleteEvent</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">event</span></em><span
+                                    class="sig-paren">)</span><a class="headerlink" href="#etcd3ref.events.DeleteEvent"
+                                                                 title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<a class="reference internal" href="#etcd3ref.events.Event"
+                                         title="etcd3ref.events.Event"><code
+                                    class="xref py py-class docutils literal notranslate"><span class="pre">etcd3ref.events.Event</span></code></a>
+                            </p>
+                            </dd>
+                        </dl>
+                        <dl class="py class">
+                            <dt id="etcd3ref.events.Event">
+                                <em class="property">class </em><code
+                                    class="sig-prename descclassname">etcd3ref.events.</code><code
+                                    class="sig-name descname">Event</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">event</span></em><span
+                                    class="sig-paren">)</span><a class="headerlink" href="#etcd3ref.events.Event"
+                                                                 title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code>
+                            </p>
+                            </dd>
+                        </dl>
+                        <dl class="py class">
+                            <dt id="etcd3ref.events.PutEvent">
+                                <em class="property">class </em><code
+                                    class="sig-prename descclassname">etcd3ref.events.</code><code
+                                    class="sig-name descname">PutEvent</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">event</span></em><span
+                                    class="sig-paren">)</span><a class="headerlink" href="#etcd3ref.events.PutEvent"
+                                                                 title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<a class="reference internal" href="#etcd3ref.events.Event"
+                                         title="etcd3ref.events.Event"><code
+                                    class="xref py py-class docutils literal notranslate"><span class="pre">etcd3ref.events.Event</span></code></a>
+                            </p>
+                            </dd>
+                        </dl>
+                        <dl class="py function">
+                            <dt id="etcd3ref.events.new_event">
+                                <code class="sig-prename descclassname">etcd3ref.events.</code><code
+                                    class="sig-name descname">new_event</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">event</span></em><span
+                                    class="sig-paren">)</span><a class="headerlink" href="#etcd3ref.events.new_event"
+                                                                 title="永久链接至目标">¶</a></dt>
+                            <dd><p>Wrap a raw gRPC event in a friendlier containing class.</p>
+                                <p>This picks the appropriate class from one of PutEvent or DeleteEvent and
+                                    returns a new instance.</p>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="section" id="module-etcd3ref.exceptions">
+                        <span id="etcd3ref-exceptions-module"></span>
+                        <h2>etcd3ref.exceptions module<a class="headerlink" href="#module-etcd3ref.exceptions"
+                                                         title="永久链接至标题">¶</a></h2>
+                        <dl class="py exception">
+                            <dt id="etcd3ref.exceptions.ConnectionFailedError">
+                                <em class="property">exception </em><code class="sig-prename descclassname">etcd3ref.exceptions.</code><code
+                                    class="sig-name descname">ConnectionFailedError</code><a class="headerlink"
+                                                                                             href="#etcd3ref.exceptions.ConnectionFailedError"
+                                                                                             title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<a class="reference internal" href="#etcd3ref.exceptions.Etcd3Exception"
+                                         title="etcd3ref.exceptions.Etcd3Exception"><code
+                                    class="xref py py-class docutils literal notranslate"><span class="pre">etcd3ref.exceptions.Etcd3Exception</span></code></a>
+                            </p>
+                            </dd>
+                        </dl>
+                        <dl class="py exception">
+                            <dt id="etcd3ref.exceptions.ConnectionTimeoutError">
+                                <em class="property">exception </em><code class="sig-prename descclassname">etcd3ref.exceptions.</code><code
+                                    class="sig-name descname">ConnectionTimeoutError</code><a class="headerlink"
+                                                                                              href="#etcd3ref.exceptions.ConnectionTimeoutError"
+                                                                                              title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<a class="reference internal" href="#etcd3ref.exceptions.Etcd3Exception"
+                                         title="etcd3ref.exceptions.Etcd3Exception"><code
+                                    class="xref py py-class docutils literal notranslate"><span class="pre">etcd3ref.exceptions.Etcd3Exception</span></code></a>
+                            </p>
+                            </dd>
+                        </dl>
+                        <dl class="py exception">
+                            <dt id="etcd3ref.exceptions.Etcd3Exception">
+                                <em class="property">exception </em><code class="sig-prename descclassname">etcd3ref.exceptions.</code><code
+                                    class="sig-name descname">Etcd3Exception</code><a class="headerlink"
+                                                                                      href="#etcd3ref.exceptions.Etcd3Exception"
+                                                                                      title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code>
+                            </p>
+                            </dd>
+                        </dl>
+                        <dl class="py exception">
+                            <dt id="etcd3ref.exceptions.InternalServerError">
+                                <em class="property">exception </em><code class="sig-prename descclassname">etcd3ref.exceptions.</code><code
+                                    class="sig-name descname">InternalServerError</code><a class="headerlink"
+                                                                                           href="#etcd3ref.exceptions.InternalServerError"
+                                                                                           title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<a class="reference internal" href="#etcd3ref.exceptions.Etcd3Exception"
+                                         title="etcd3ref.exceptions.Etcd3Exception"><code
+                                    class="xref py py-class docutils literal notranslate"><span class="pre">etcd3ref.exceptions.Etcd3Exception</span></code></a>
+                            </p>
+                            </dd>
+                        </dl>
+                        <dl class="py exception">
+                            <dt id="etcd3ref.exceptions.PreconditionFailedError">
+                                <em class="property">exception </em><code class="sig-prename descclassname">etcd3ref.exceptions.</code><code
+                                    class="sig-name descname">PreconditionFailedError</code><a class="headerlink"
+                                                                                               href="#etcd3ref.exceptions.PreconditionFailedError"
+                                                                                               title="永久链接至目标">¶</a>
+                            </dt>
+                            <dd><p>基类：<a class="reference internal" href="#etcd3ref.exceptions.Etcd3Exception"
+                                         title="etcd3ref.exceptions.Etcd3Exception"><code
+                                    class="xref py py-class docutils literal notranslate"><span class="pre">etcd3ref.exceptions.Etcd3Exception</span></code></a>
+                            </p>
+                            </dd>
+                        </dl>
+                        <dl class="py exception">
+                            <dt id="etcd3ref.exceptions.RevisionCompactedError">
+                                <em class="property">exception </em><code class="sig-prename descclassname">etcd3ref.exceptions.</code><code
+                                    class="sig-name descname">RevisionCompactedError</code><span
+                                    class="sig-paren">(</span><em class="sig-param"><span
+                                    class="n">compacted_revision</span></em><span class="sig-paren">)</span><a
+                                    class="headerlink" href="#etcd3ref.exceptions.RevisionCompactedError"
+                                    title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<a class="reference internal" href="#etcd3ref.exceptions.Etcd3Exception"
+                                         title="etcd3ref.exceptions.Etcd3Exception"><code
+                                    class="xref py py-class docutils literal notranslate"><span class="pre">etcd3ref.exceptions.Etcd3Exception</span></code></a>
+                            </p>
+                            </dd>
+                        </dl>
+                        <dl class="py exception">
+                            <dt id="etcd3ref.exceptions.WatchTimedOut">
+                                <em class="property">exception </em><code class="sig-prename descclassname">etcd3ref.exceptions.</code><code
+                                    class="sig-name descname">WatchTimedOut</code><a class="headerlink"
+                                                                                     href="#etcd3ref.exceptions.WatchTimedOut"
+                                                                                     title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<a class="reference internal" href="#etcd3ref.exceptions.Etcd3Exception"
+                                         title="etcd3ref.exceptions.Etcd3Exception"><code
+                                    class="xref py py-class docutils literal notranslate"><span class="pre">etcd3ref.exceptions.Etcd3Exception</span></code></a>
+                            </p>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="section" id="module-etcd3ref.leases">
+                        <span id="etcd3ref-leases-module"></span>
+                        <h2>etcd3ref.leases module<a class="headerlink" href="#module-etcd3ref.leases"
+                                                     title="永久链接至标题">¶</a></h2>
+                        <dl class="py class">
+                            <dt id="etcd3ref.leases.Lease">
+                                <em class="property">class </em><code
+                                    class="sig-prename descclassname">etcd3ref.leases.</code><code
+                                    class="sig-name descname">Lease</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">lease_id</span></em>, <em class="sig-param"><span
+                                    class="n">ttl</span></em>, <em class="sig-param"><span
+                                    class="n">etcd_client</span><span class="o">=</span><span
+                                    class="default_value">None</span></em><span class="sig-paren">)</span><a
+                                    class="headerlink" href="#etcd3ref.leases.Lease" title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code>
+                            </p>
+                                <p>A lease.</p>
+                                <dl class="field-list simple">
+                                    <dt class="field-odd">变量</dt>
+                                    <dd class="field-odd">
+                                        <ul class="simple">
+                                            <li><p><strong>id</strong> – ID of the lease</p></li>
+                                            <li><p><strong>ttl</strong> – time to live for this lease</p></li>
+                                        </ul>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.leases.Lease.granted_ttl">
+                                        <em class="property">property </em><code
+                                            class="sig-name descname">granted_ttl</code><a class="headerlink"
+                                                                                           href="#etcd3ref.leases.Lease.granted_ttl"
+                                                                                           title="永久链接至目标">¶</a></dt>
+                                    <dd></dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.leases.Lease.keys">
+                                        <em class="property">property </em><code class="sig-name descname">keys</code><a
+                                            class="headerlink" href="#etcd3ref.leases.Lease.keys" title="永久链接至目标">¶</a>
+                                    </dt>
+                                    <dd></dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.leases.Lease.refresh">
+                                        <code class="sig-name descname">refresh</code><span
+                                            class="sig-paren">(</span><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.leases.Lease.refresh"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Refresh the time to live for this lease.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.leases.Lease.remaining_ttl">
+                                        <em class="property">property </em><code
+                                            class="sig-name descname">remaining_ttl</code><a class="headerlink"
+                                                                                             href="#etcd3ref.leases.Lease.remaining_ttl"
+                                                                                             title="永久链接至目标">¶</a></dt>
+                                    <dd></dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.leases.Lease.revoke">
+                                        <code class="sig-name descname">revoke</code><span
+                                            class="sig-paren">(</span><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.leases.Lease.revoke"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Revoke this lease.</p>
+                                    </dd>
+                                </dl>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="section" id="module-etcd3ref.locks">
+                        <span id="etcd3ref-locks-module"></span>
+                        <h2>etcd3ref.locks module<a class="headerlink" href="#module-etcd3ref.locks"
+                                                    title="永久链接至标题">¶</a></h2>
+                        <dl class="py class">
+                            <dt id="etcd3ref.locks.Lock">
+                                <em class="property">class </em><code
+                                    class="sig-prename descclassname">etcd3ref.locks.</code><code
+                                    class="sig-name descname">Lock</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span
+                                    class="n">ttl</span><span class="o">=</span><span
+                                    class="default_value">60</span></em>, <em class="sig-param"><span class="n">etcd_client</span><span
+                                    class="o">=</span><span class="default_value">None</span></em><span
+                                    class="sig-paren">)</span><a class="headerlink" href="#etcd3ref.locks.Lock"
+                                                                 title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code>
+                            </p>
+                                <p>A distributed lock.</p>
+                                <p>This can be used as a context manager, with the lock being acquired and
+                                    released as you would expect:</p>
+                                <div class="highlight-python notranslate">
+                                    <div class="highlight"><pre><span></span><span class="n">etcd</span> <span
+                                            class="o">=</span> <span class="n">etcd3ref</span><span
+                                            class="o">.</span><span class="n">client</span><span class="p">()</span>
+
+<span class="c1"># create a lock that expires after 20 seconds</span>
+<span class="k">with</span> <span class="n">etcd</span><span class="o">.</span><span class="n">lock</span><span
+                                                class="p">(</span><span class="s1">'toot'</span><span class="p">,</span> <span
+                                                class="n">ttl</span><span class="o">=</span><span
+                                                class="mi">20</span><span class="p">)</span> <span
+                                                class="k">as</span> <span class="n">lock</span><span class="p">:</span>
+    <span class="c1"># do something that requires the lock</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">lock</span><span class="o">.</span><span
+                                                class="n">is_acquired</span><span class="p">())</span>
+
+    <span class="c1"># refresh the timeout on the lease</span>
+    <span class="n">lock</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
+</pre>
+                                    </div>
+                                </div>
+                                <dl class="field-list simple">
+                                    <dt class="field-odd">参数</dt>
+                                    <dd class="field-odd">
+                                        <ul class="simple">
+                                            <li><p><strong>name</strong> (<em>string</em><em> or </em><em>bytes</em>) –
+                                                name of the lock</p></li>
+                                            <li><p><strong>ttl</strong> (<em>int</em>) – length of time for the lock to
+                                                live for in seconds. The lock
+                                                will be released after this time elapses, unless refreshed</p></li>
+                                        </ul>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.locks.Lock.acquire">
+                                        <code class="sig-name descname">acquire</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">timeout</span><span class="o">=</span><span class="default_value">10</span></em><span
+                                            class="sig-paren">)</span><a class="headerlink"
+                                                                         href="#etcd3ref.locks.Lock.acquire"
+                                                                         title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Acquire the lock.</p>
+                                        <dl class="field-list simple">
+                                            <dt class="field-odd">Params timeout</dt>
+                                            <dd class="field-odd"><p>Maximum time to wait before returning.
+                                                <cite>None</cite> means
+                                                forever, any other value equal or greater than 0 is
+                                                the number of seconds.</p>
+                                            </dd>
+                                            <dt class="field-even">返回</dt>
+                                            <dd class="field-even"><p>True if the lock has been acquired, False
+                                                otherwise.</p>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.locks.Lock.is_acquired">
+                                        <code class="sig-name descname">is_acquired</code><span
+                                            class="sig-paren">(</span><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.locks.Lock.is_acquired"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Check if this lock is currently acquired.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.locks.Lock.refresh">
+                                        <code class="sig-name descname">refresh</code><span
+                                            class="sig-paren">(</span><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.locks.Lock.refresh" title="永久链接至目标">¶</a>
+                                    </dt>
+                                    <dd><p>Refresh the time to live on this lock.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.locks.Lock.release">
+                                        <code class="sig-name descname">release</code><span
+                                            class="sig-paren">(</span><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.locks.Lock.release" title="永久链接至目标">¶</a>
+                                    </dt>
+                                    <dd><p>Release the lock.</p>
+                                    </dd>
+                                </dl>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="section" id="module-etcd3ref.members">
+                        <span id="etcd3ref-members-module"></span>
+                        <h2>etcd3ref.members module<a class="headerlink" href="#module-etcd3ref.members"
+                                                      title="永久链接至标题">¶</a></h2>
+                        <dl class="py class">
+                            <dt id="etcd3ref.members.Member">
+                                <em class="property">class </em><code class="sig-prename descclassname">etcd3ref.members.</code><code
+                                    class="sig-name descname">Member</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">id</span></em>, <em class="sig-param"><span
+                                    class="n">name</span></em>, <em class="sig-param"><span
+                                    class="n">peer_urls</span></em>, <em class="sig-param"><span
+                                    class="n">client_urls</span></em>, <em class="sig-param"><span
+                                    class="n">etcd_client</span><span class="o">=</span><span
+                                    class="default_value">None</span></em><span class="sig-paren">)</span><a
+                                    class="headerlink" href="#etcd3ref.members.Member" title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code>
+                            </p>
+                                <p>A member of the etcd cluster.</p>
+                                <dl class="field-list simple">
+                                    <dt class="field-odd">变量</dt>
+                                    <dd class="field-odd">
+                                        <ul class="simple">
+                                            <li><p><strong>id</strong> – ID of the member</p></li>
+                                            <li><p><strong>name</strong> – human-readable name of the member</p></li>
+                                            <li><p><strong>peer_urls</strong> – list of URLs the member exposes to the
+                                                cluster for
+                                                communication</p></li>
+                                            <li><p><strong>client_urls</strong> – list of URLs the member exposes to
+                                                clients for
+                                                communication</p></li>
+                                        </ul>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.members.Member.active_alarms">
+                                        <em class="property">property </em><code
+                                            class="sig-name descname">active_alarms</code><a class="headerlink"
+                                                                                             href="#etcd3ref.members.Member.active_alarms"
+                                                                                             title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Get active alarms of the member.</p>
+                                        <dl class="field-list simple">
+                                            <dt class="field-odd">返回</dt>
+                                            <dd class="field-odd"><p>Alarms</p>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.members.Member.remove">
+                                        <code class="sig-name descname">remove</code><span
+                                            class="sig-paren">(</span><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.members.Member.remove"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Remove this member from the cluster.</p>
+                                    </dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.members.Member.update">
+                                        <code class="sig-name descname">update</code><span class="sig-paren">(</span><em
+                                            class="sig-param"><span class="n">peer_urls</span></em><span
+                                            class="sig-paren">)</span><a class="headerlink"
+                                                                         href="#etcd3ref.members.Member.update"
+                                                                         title="永久链接至目标">¶</a></dt>
+                                    <dd><p>Update the configuration of this member.</p>
+                                        <dl class="field-list simple">
+                                            <dt class="field-odd">参数</dt>
+                                            <dd class="field-odd"><p><strong>peer_urls</strong> – new list of peer urls
+                                                the member will use to
+                                                communicate with the cluster</p>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="section" id="module-etcd3ref.transactions">
+                        <span id="etcd3ref-transactions-module"></span>
+                        <h2>etcd3ref.transactions module<a class="headerlink" href="#module-etcd3ref.transactions"
+                                                           title="永久链接至标题">¶</a></h2>
+                        <dl class="py class">
+                            <dt id="etcd3ref.transactions.BaseCompare">
+                                <em class="property">class </em><code class="sig-prename descclassname">etcd3ref.transactions.</code><code
+                                    class="sig-name descname">BaseCompare</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span
+                                    class="n">range_end</span><span class="o">=</span><span
+                                    class="default_value">None</span></em><span class="sig-paren">)</span><a
+                                    class="headerlink" href="#etcd3ref.transactions.BaseCompare" title="永久链接至目标">¶</a>
+                            </dt>
+                            <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code>
+                            </p>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.transactions.BaseCompare.build_compare">
+                                        <code class="sig-name descname">build_compare</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">compare</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.transactions.BaseCompare.build_compare"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd></dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.transactions.BaseCompare.build_message">
+                                        <code class="sig-name descname">build_message</code><span
+                                            class="sig-paren">(</span><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.transactions.BaseCompare.build_message"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd></dd>
+                                </dl>
+                            </dd>
+                        </dl>
+                        <dl class="py class">
+                            <dt id="etcd3ref.transactions.Create">
+                                <em class="property">class </em><code class="sig-prename descclassname">etcd3ref.transactions.</code><code
+                                    class="sig-name descname">Create</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span
+                                    class="n">range_end</span><span class="o">=</span><span
+                                    class="default_value">None</span></em><span class="sig-paren">)</span><a
+                                    class="headerlink" href="#etcd3ref.transactions.Create" title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<a class="reference internal" href="#etcd3ref.transactions.BaseCompare"
+                                         title="etcd3ref.transactions.BaseCompare"><code
+                                    class="xref py py-class docutils literal notranslate"><span class="pre">etcd3ref.transactions.BaseCompare</span></code></a>
+                            </p>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.transactions.Create.build_compare">
+                                        <code class="sig-name descname">build_compare</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">compare</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.transactions.Create.build_compare"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd></dd>
+                                </dl>
+                            </dd>
+                        </dl>
+                        <dl class="py class">
+                            <dt id="etcd3ref.transactions.Delete">
+                                <em class="property">class </em><code class="sig-prename descclassname">etcd3ref.transactions.</code><code
+                                    class="sig-name descname">Delete</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span
+                                    class="n">range_end</span><span class="o">=</span><span
+                                    class="default_value">None</span></em>, <em class="sig-param"><span class="n">prev_kv</span><span
+                                    class="o">=</span><span class="default_value">False</span></em><span
+                                    class="sig-paren">)</span><a class="headerlink" href="#etcd3ref.transactions.Delete"
+                                                                 title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code>
+                            </p>
+                            </dd>
+                        </dl>
+                        <dl class="py class">
+                            <dt id="etcd3ref.transactions.Get">
+                                <em class="property">class </em><code class="sig-prename descclassname">etcd3ref.transactions.</code><code
+                                    class="sig-name descname">Get</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span
+                                    class="n">range_end</span><span class="o">=</span><span
+                                    class="default_value">None</span></em><span class="sig-paren">)</span><a
+                                    class="headerlink" href="#etcd3ref.transactions.Get" title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code>
+                            </p>
+                            </dd>
+                        </dl>
+                        <dl class="py class">
+                            <dt id="etcd3ref.transactions.Mod">
+                                <em class="property">class </em><code class="sig-prename descclassname">etcd3ref.transactions.</code><code
+                                    class="sig-name descname">Mod</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span
+                                    class="n">range_end</span><span class="o">=</span><span
+                                    class="default_value">None</span></em><span class="sig-paren">)</span><a
+                                    class="headerlink" href="#etcd3ref.transactions.Mod" title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<a class="reference internal" href="#etcd3ref.transactions.BaseCompare"
+                                         title="etcd3ref.transactions.BaseCompare"><code
+                                    class="xref py py-class docutils literal notranslate"><span class="pre">etcd3ref.transactions.BaseCompare</span></code></a>
+                            </p>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.transactions.Mod.build_compare">
+                                        <code class="sig-name descname">build_compare</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">compare</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.transactions.Mod.build_compare"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd></dd>
+                                </dl>
+                            </dd>
+                        </dl>
+                        <dl class="py class">
+                            <dt id="etcd3ref.transactions.Put">
+                                <em class="property">class </em><code class="sig-prename descclassname">etcd3ref.transactions.</code><code
+                                    class="sig-name descname">Put</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span
+                                    class="n">value</span></em>, <em class="sig-param"><span class="n">lease</span><span
+                                    class="o">=</span><span class="default_value">None</span></em>, <em
+                                    class="sig-param"><span class="n">prev_kv</span><span class="o">=</span><span
+                                    class="default_value">False</span></em><span class="sig-paren">)</span><a
+                                    class="headerlink" href="#etcd3ref.transactions.Put" title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code>
+                            </p>
+                            </dd>
+                        </dl>
+                        <dl class="py class">
+                            <dt id="etcd3ref.transactions.Txn">
+                                <em class="property">class </em><code class="sig-prename descclassname">etcd3ref.transactions.</code><code
+                                    class="sig-name descname">Txn</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">compare</span></em>, <em class="sig-param"><span
+                                    class="n">success</span><span class="o">=</span><span
+                                    class="default_value">None</span></em>, <em class="sig-param"><span class="n">failure</span><span
+                                    class="o">=</span><span class="default_value">None</span></em><span
+                                    class="sig-paren">)</span><a class="headerlink" href="#etcd3ref.transactions.Txn"
+                                                                 title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code>
+                            </p>
+                            </dd>
+                        </dl>
+                        <dl class="py class">
+                            <dt id="etcd3ref.transactions.Value">
+                                <em class="property">class </em><code class="sig-prename descclassname">etcd3ref.transactions.</code><code
+                                    class="sig-name descname">Value</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span
+                                    class="n">range_end</span><span class="o">=</span><span
+                                    class="default_value">None</span></em><span class="sig-paren">)</span><a
+                                    class="headerlink" href="#etcd3ref.transactions.Value" title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<a class="reference internal" href="#etcd3ref.transactions.BaseCompare"
+                                         title="etcd3ref.transactions.BaseCompare"><code
+                                    class="xref py py-class docutils literal notranslate"><span class="pre">etcd3ref.transactions.BaseCompare</span></code></a>
+                            </p>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.transactions.Value.build_compare">
+                                        <code class="sig-name descname">build_compare</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">compare</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.transactions.Value.build_compare"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd></dd>
+                                </dl>
+                            </dd>
+                        </dl>
+                        <dl class="py class">
+                            <dt id="etcd3ref.transactions.Version">
+                                <em class="property">class </em><code class="sig-prename descclassname">etcd3ref.transactions.</code><code
+                                    class="sig-name descname">Version</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span
+                                    class="n">range_end</span><span class="o">=</span><span
+                                    class="default_value">None</span></em><span class="sig-paren">)</span><a
+                                    class="headerlink" href="#etcd3ref.transactions.Version" title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<a class="reference internal" href="#etcd3ref.transactions.BaseCompare"
+                                         title="etcd3ref.transactions.BaseCompare"><code
+                                    class="xref py py-class docutils literal notranslate"><span class="pre">etcd3ref.transactions.BaseCompare</span></code></a>
+                            </p>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.transactions.Version.build_compare">
+                                        <code class="sig-name descname">build_compare</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">compare</span></em><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.transactions.Version.build_compare"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd></dd>
+                                </dl>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="section" id="module-etcd3ref.utils">
+                        <span id="etcd3ref-utils-module"></span>
+                        <h2>etcd3ref.utils module<a class="headerlink" href="#module-etcd3ref.utils"
+                                                    title="永久链接至标题">¶</a></h2>
+                        <dl class="py function">
+                            <dt id="etcd3ref.utils.lease_to_id">
+                                <code class="sig-prename descclassname">etcd3ref.utils.</code><code
+                                    class="sig-name descname">lease_to_id</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">lease</span></em><span
+                                    class="sig-paren">)</span><a class="headerlink" href="#etcd3ref.utils.lease_to_id"
+                                                                 title="永久链接至目标">¶</a></dt>
+                            <dd><p>Figure out if the argument is a Lease object, or the lease ID.</p>
+                            </dd>
+                        </dl>
+                        <dl class="py function">
+                            <dt id="etcd3ref.utils.prefix_range_end">
+                                <code class="sig-prename descclassname">etcd3ref.utils.</code><code
+                                    class="sig-name descname">prefix_range_end</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">prefix</span></em><span class="sig-paren">)</span><a
+                                    class="headerlink" href="#etcd3ref.utils.prefix_range_end" title="永久链接至目标">¶</a>
+                            </dt>
+                            <dd><p>Create a bytestring that can be used as a range_end for a prefix.</p>
+                            </dd>
+                        </dl>
+                        <dl class="py function">
+                            <dt id="etcd3ref.utils.response_to_event_iterator">
+                                <code class="sig-prename descclassname">etcd3ref.utils.</code><code
+                                    class="sig-name descname">response_to_event_iterator</code><span
+                                    class="sig-paren">(</span><em class="sig-param"><span
+                                    class="n">response_iterator</span></em><span class="sig-paren">)</span><a
+                                    class="headerlink" href="#etcd3ref.utils.response_to_event_iterator"
+                                    title="永久链接至目标">¶</a></dt>
+                            <dd><p>Convert a watch response iterator to an event iterator.</p>
+                            </dd>
+                        </dl>
+                        <dl class="py function">
+                            <dt id="etcd3ref.utils.to_bytes">
+                                <code class="sig-prename descclassname">etcd3ref.utils.</code><code
+                                    class="sig-name descname">to_bytes</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">maybe_bytestring</span></em><span
+                                    class="sig-paren">)</span><a class="headerlink" href="#etcd3ref.utils.to_bytes"
+                                                                 title="永久链接至目标">¶</a></dt>
+                            <dd><p>Encode string to bytes.</p>
+                                <p>Convenience function to do a simple encode(‘utf-8’) if the input is not
+                                    already bytes. Returns the data unmodified if the input is bytes.</p>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="section" id="module-etcd3ref.watch">
+                        <span id="etcd3ref-watch-module"></span>
+                        <h2>etcd3ref.watch module<a class="headerlink" href="#module-etcd3ref.watch"
+                                                    title="永久链接至标题">¶</a></h2>
+                        <dl class="py class">
+                            <dt id="etcd3ref.watch.Watch">
+                                <em class="property">class </em><code
+                                    class="sig-prename descclassname">etcd3ref.watch.</code><code
+                                    class="sig-name descname">Watch</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">watch_id</span></em>, <em class="sig-param"><span
+                                    class="n">iterator</span><span class="o">=</span><span
+                                    class="default_value">None</span></em>, <em class="sig-param"><span class="n">etcd_client</span><span
+                                    class="o">=</span><span class="default_value">None</span></em><span
+                                    class="sig-paren">)</span><a class="headerlink" href="#etcd3ref.watch.Watch"
+                                                                 title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code>
+                            </p>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.watch.Watch.cancel">
+                                        <code class="sig-name descname">cancel</code><span
+                                            class="sig-paren">(</span><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.watch.Watch.cancel" title="永久链接至目标">¶</a>
+                                    </dt>
+                                    <dd></dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.watch.Watch.iterator">
+                                        <code class="sig-name descname">iterator</code><span
+                                            class="sig-paren">(</span><span class="sig-paren">)</span><a
+                                            class="headerlink" href="#etcd3ref.watch.Watch.iterator"
+                                            title="永久链接至目标">¶</a></dt>
+                                    <dd></dd>
+                                </dl>
+                            </dd>
+                        </dl>
+                        <dl class="py class">
+                            <dt id="etcd3ref.watch.WatchResponse">
+                                <em class="property">class </em><code
+                                    class="sig-prename descclassname">etcd3ref.watch.</code><code
+                                    class="sig-name descname">WatchResponse</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">header</span></em>, <em class="sig-param"><span
+                                    class="n">events</span></em><span class="sig-paren">)</span><a class="headerlink"
+                                                                                                   href="#etcd3ref.watch.WatchResponse"
+                                                                                                   title="永久链接至目标">¶</a>
+                            </dt>
+                            <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code>
+                            </p>
+                            </dd>
+                        </dl>
+                        <dl class="py class">
+                            <dt id="etcd3ref.watch.Watcher">
+                                <em class="property">class </em><code
+                                    class="sig-prename descclassname">etcd3ref.watch.</code><code
+                                    class="sig-name descname">Watcher</code><span class="sig-paren">(</span><em
+                                    class="sig-param"><span class="n">watchstub</span></em>, <em class="sig-param"><span
+                                    class="n">timeout</span><span class="o">=</span><span
+                                    class="default_value">None</span></em>, <em class="sig-param"><span class="n">call_credentials</span><span
+                                    class="o">=</span><span class="default_value">None</span></em>, <em
+                                    class="sig-param"><span class="n">metadata</span><span class="o">=</span><span
+                                    class="default_value">None</span></em><span class="sig-paren">)</span><a
+                                    class="headerlink" href="#etcd3ref.watch.Watcher" title="永久链接至目标">¶</a></dt>
+                            <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code>
+                            </p>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.watch.Watcher.add_callback">
+                                        <code class="sig-name descname">add_callback</code><span
+                                            class="sig-paren">(</span><em class="sig-param"><span
+                                            class="n">key</span></em>, <em class="sig-param"><span
+                                            class="n">callback</span></em>, <em class="sig-param"><span class="n">range_end</span><span
+                                            class="o">=</span><span class="default_value">None</span></em>, <em
+                                            class="sig-param"><span class="n">start_revision</span><span
+                                            class="o">=</span><span class="default_value">None</span></em>, <em
+                                            class="sig-param"><span class="n">progress_notify</span><span
+                                            class="o">=</span><span class="default_value">False</span></em>, <em
+                                            class="sig-param"><span class="n">filters</span><span
+                                            class="o">=</span><span class="default_value">None</span></em>, <em
+                                            class="sig-param"><span class="n">prev_kv</span><span
+                                            class="o">=</span><span class="default_value">False</span></em><span
+                                            class="sig-paren">)</span><a class="headerlink"
+                                                                         href="#etcd3ref.watch.Watcher.add_callback"
+                                                                         title="永久链接至目标">¶</a></dt>
+                                    <dd></dd>
+                                </dl>
+                                <dl class="py method">
+                                    <dt id="etcd3ref.watch.Watcher.cancel">
+                                        <code class="sig-name descname">cancel</code><span class="sig-paren">(</span><em
+                                            class="sig-param"><span class="n">watch_id</span></em><span
+                                            class="sig-paren">)</span><a class="headerlink"
+                                                                         href="#etcd3ref.watch.Watcher.cancel"
+                                                                         title="永久链接至目标">¶</a></dt>
+                                    <dd></dd>
+                                </dl>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="section" id="module-etcd3ref">
+                        <span id="module-contents"></span>
+                        <h2>Module contents<a class="headerlink" href="#module-etcd3ref" title="永久链接至标题">¶</a></h2>
+                    </div>
+                </div>
+
+            </article>
+            <footer>
+
+                <div class="related-pages">
+                    <a class="next-page" href="etcd3ref.etcdrpc.html">
+                        <div class="page-info">
+                            <div class="context">
+                                <span>Next</span>
+                            </div>
+                            <div class="title">etcd3ref.etcdrpc package</div>
+                        </div>
+                        <svg>
+                            <use href="#svg-arrow-right"></use>
+                        </svg>
+                    </a>
+                    <a class="prev-page" href="modules.html">
+                        <svg>
+                            <use href="#svg-arrow-right"></use>
+                        </svg>
+                        <div class="page-info">
+                            <div class="context">
+                                <span>Previous</span>
+                            </div>
+
+                            <div class="title">etcd3ref</div>
+
+                        </div>
+                    </a>
+                </div>
+
+                <div class="related-information">
+                    Copyright &#169; 2021, Hochikong
+                    |
+                    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+                    and
+                    <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+                    <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+                    |
+                    <a class="muted-link" href="../_sources/api/etcd3ref.rst.txt"
+                       rel="nofollow">
+                        显示源代码
+                    </a>
+                </div>
+
+            </footer>
+        </div>
+        <aside class="toc-drawer">
+
+
+            <div class="toc-sticky toc-scroll">
+                <div class="toc-title-container">
+          <span class="toc-title">
+            目录
+          </span>
+                </div>
+                <div class="toc-tree-container">
+                    <div class="toc-tree">
+                        <ul>
+                            <li><a class="reference internal" href="#">etcd3ref package</a>
+                                <ul>
+                                    <li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+                                    <li><a class="reference internal" href="#submodules">Submodules</a></li>
+                                    <li><a class="reference internal" href="#module-etcd3ref.client">etcd3ref.client
+                                        module</a></li>
+                                    <li><a class="reference internal" href="#module-etcd3ref.events">etcd3ref.events
+                                        module</a></li>
+                                    <li><a class="reference internal" href="#module-etcd3ref.exceptions">etcd3ref.exceptions
+                                        module</a></li>
+                                    <li><a class="reference internal" href="#module-etcd3ref.leases">etcd3ref.leases
+                                        module</a></li>
+                                    <li><a class="reference internal" href="#module-etcd3ref.locks">etcd3ref.locks
+                                        module</a></li>
+                                    <li><a class="reference internal" href="#module-etcd3ref.members">etcd3ref.members
+                                        module</a></li>
+                                    <li><a class="reference internal" href="#module-etcd3ref.transactions">etcd3ref.transactions
+                                        module</a></li>
+                                    <li><a class="reference internal" href="#module-etcd3ref.utils">etcd3ref.utils
+                                        module</a></li>
+                                    <li><a class="reference internal" href="#module-etcd3ref.watch">etcd3ref.watch
+                                        module</a></li>
+                                    <li><a class="reference internal" href="#module-etcd3ref">Module contents</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </aside>
+    </main>
+</div>
+</body>
+</html>
